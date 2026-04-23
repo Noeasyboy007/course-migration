@@ -2,12 +2,15 @@ const fs = require('fs/promises');
 const vm = require('vm');
 
 const { getMigrationConfig } = require('../config/migrationConfig');
-const { parseCsvFile } = require('./csvParserService');
-
-let cachedDataset = null;
+const {
+    collectAllCsvRows,
+    collectCsvRowsWhere,
+    collectFirstNCsvRows,
+    streamCsvRecords,
+} = require('./csvParserService');
 
 async function previewCourses(options = {}) {
-    const courses = await buildMigratedCourses();
+    const courses = await buildMigratedCourses(options);
     const filtered = filterCourses(courses, options);
 
     return {
@@ -18,7 +21,7 @@ async function previewCourses(options = {}) {
 }
 
 async function migrateCourses(options = {}) {
-    const courses = await buildMigratedCourses();
+    const courses = await buildMigratedCourses(options);
     const selectedCourses = filterCourses(courses, options);
     const results = [];
 
@@ -54,8 +57,8 @@ async function migrateCourses(options = {}) {
     };
 }
 
-async function buildMigratedCourses() {
-    const dataset = await loadDataset();
+async function buildMigratedCourses(options = {}) {
+    const dataset = await loadMigrationSourceData(options);
     const { courseRows, bannerRows, contentRows, courseTypeMap, mapping } = dataset;
 
     const bannerMap = buildBannerMap(bannerRows);
@@ -86,30 +89,111 @@ async function buildMigratedCourses() {
     });
 }
 
-async function loadDataset() {
-    if (cachedDataset) {
-        return cachedDataset;
+function resolveMaxRows(limit) {
+    if (limit == null || limit === '') {
+        return Number.POSITIVE_INFINITY;
     }
 
+    const n = Number(limit);
+
+    if (!Number.isFinite(n) || n < 0) {
+        return Number.POSITIVE_INFINITY;
+    }
+
+    return n;
+}
+
+/**
+ * Loads course rows (respecting courseId / courseIds / limit) and only banner/content
+ * rows for those courses, using streaming CSV reads to avoid holding multi‑MB files in memory twice.
+ */
+async function loadMigrationSourceData(options = {}) {
     const config = getMigrationConfig();
-    const [courseRows, bannerRows, contentRows, courseTypeRows, mapping] = await Promise.all([
-        parseCsvFile(config.csv.course),
-        parseCsvFile(config.csv.banner),
-        parseCsvFile(config.csv.content),
-        parseCsvFile(config.csv.courseType),
+    const maxRows = resolveMaxRows(options.limit);
+
+    if (maxRows === 0) {
+        const mapping = await loadMapping(config.mappingFile);
+        const courseTypeRows = await collectAllCsvRows(config.csv.courseType);
+        return {
+            courseRows: [],
+            bannerRows: [],
+            contentRows: [],
+            courseTypeMap: buildCourseTypeMapById(courseTypeRows),
+            mapping,
+        };
+    }
+
+    const [mapping, courseTypeRows, courseRows] = await Promise.all([
         loadMapping(config.mappingFile),
+        collectAllCsvRows(config.csv.courseType),
+        collectCourseRowsWithFilters(config.csv.course, options),
     ]);
 
-    cachedDataset = {
+    const idSetForRelated = new Set(
+        courseRows.map((row) => String(row.id ?? '').trim()).filter(Boolean),
+    );
+
+    const [bannerRows, contentRows] = await Promise.all([
+        collectCsvRowsWhere(config.csv.banner, (row) =>
+            idSetForRelated.has(String(row.course_id ?? '').trim()),
+        ),
+        collectCsvRowsWhere(config.csv.content, (row) =>
+            idSetForRelated.has(String(row.course_id ?? '').trim()),
+        ),
+    ]);
+
+    return {
         courseRows,
         bannerRows,
         contentRows,
-        courseTypeRows,
         courseTypeMap: buildCourseTypeMapById(courseTypeRows),
         mapping,
     };
+}
 
-    return cachedDataset;
+async function collectCourseRowsWithFilters(filePath, options = {}) {
+    const maxRows = resolveMaxRows(options.limit);
+
+    if (options.courseId) {
+        const courseId = String(options.courseId).trim();
+        const rows = await collectCsvRowsWhere(
+            filePath,
+            (row) => String(row.id ?? '').trim() === courseId,
+        );
+
+        if (maxRows === Number.POSITIVE_INFINITY) {
+            return rows;
+        }
+
+        return rows.slice(0, maxRows);
+    }
+
+    if (Array.isArray(options.courseIds) && options.courseIds.length > 0) {
+        const idSet = new Set(options.courseIds.map((id) => String(id).trim()));
+        const matched = [];
+
+        await streamCsvRecords(filePath, (row) => {
+            if (!idSet.has(String(row.id ?? '').trim())) {
+                return true;
+            }
+
+            matched.push(row);
+
+            if (maxRows !== Number.POSITIVE_INFINITY && matched.length >= maxRows) {
+                return false;
+            }
+
+            return true;
+        });
+
+        return matched;
+    }
+
+    if (maxRows !== Number.POSITIVE_INFINITY) {
+        return collectFirstNCsvRows(filePath, maxRows);
+    }
+
+    return collectAllCsvRows(filePath);
 }
 
 async function loadMapping(mappingFilePath) {
