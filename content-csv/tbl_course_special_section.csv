@@ -1,0 +1,32 @@
+"id","course_id","content_title","content_details","status","added_date","modified_date"
+"1","100","SPECIAL SECTION","<p><span style=""color:rgb(0, 0, 0); font-family:open sans,arial,sans-serif; font-size:14px; text-align:justify"">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem ipsum&#39; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span></p>
+
+<p>&nbsp;</p>
+
+<p><span style=""color:rgb(0, 0, 0); font-family:open sans,arial,sans-serif; font-size:14px; text-align:justify"">Edit</span></p>
+","A","2020-09-09 18:05:45","2020-09-11 12:09:08"
+"2","6","Special Section","<div class=""row"">
+<div class=""col-12 col-sm-6 col-md-4""><img src=""http://ls.lawsikho.in/assets/uploads/enhanced-files/image1-1599712674.png"" />
+<h3>Ipsum doller sit amet weting</h3>
+<span class=""tag"">Lorem</span>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+<span class=""expender"">See more</span></div>
+
+<div class=""col-12 col-sm-6 col-md-4""><img src=""http://ls.lawsikho.in/assets/uploads/enhanced-files/image1-1599712674.png"" />
+<h3>Ipsum doller sit amet weting</h3>
+<span class=""tag"">Lorem</span>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+<span class=""expender"">See more</span></div>
+
+<div class=""col-12 col-sm-6 col-md-4""><img src=""http://ls.lawsikho.in/assets/uploads/enhanced-files/image1-1599712674.png"" />
+<h3>Ipsum doller sit amet weting</h3>
+<span class=""tag"">Lorem</span>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+<span class=""expender"">See more</span></div>
+</div>
+","A","2020-09-10 10:06:16","2020-09-10 10:09:37"
+"3","119","SPECIAL SECTION",NULL,"A","2020-12-28 18:25:44",NULL
+"4","120","SPECIAL SECTION",NULL,"A","2021-01-06 13:28:25",NULL

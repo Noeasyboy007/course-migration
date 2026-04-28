@@ -8,6 +8,7 @@ const {
     collectFirstNCsvRows,
     streamCsvRecords,
 } = require('./csvParserService');
+const { loadSectionDatasets, buildSectionContentMap } = require('./contentSectionService');
 
 async function previewCourses(options = {}) {
     const courses = await buildMigratedCourses(options);
@@ -59,22 +60,32 @@ async function migrateCourses(options = {}) {
 
 async function buildMigratedCourses(options = {}) {
     const dataset = await loadMigrationSourceData(options);
-    const { courseRows, bannerRows, contentRows, courseTypeMap, mapping } = dataset;
+    const { courseRows, bannerRows, contentRows, courseTypeMap, mapping, sectionDatasets } = dataset;
 
-    const bannerMap = buildBannerMap(bannerRows);
+    const bannerMap  = buildBannerMap(bannerRows);
     const contentMap = buildContentMap(contentRows);
 
+    // Build an id-indexed map of tbl_course_content rows for section-based HTML rendering
+    const contentRowsById = new Map(
+        contentRows.map((r) => [String(r.id ?? '').trim(), r]),
+    );
+    const sectionContentMap = buildSectionContentMap(courseRows, contentRowsById, sectionDatasets);
+
     return courseRows.map((courseRow) => {
-        const bannerRow = bannerMap.get(courseRow.id) || {};
+        const courseId    = String(courseRow.id ?? '').trim();
+        const bannerRow   = bannerMap.get(courseRow.id) || {};
         const contentData = contentMap.get(courseRow.id) || createEmptyContentData(courseRow.id);
-        const typeId = String(courseRow.type_of_course ?? '').trim();
+        const typeId      = String(courseRow.type_of_course ?? '').trim();
         const courseTypeRow = (typeId && courseTypeMap.get(typeId)) || {};
+        const sectionHtml = sectionContentMap.get(courseId) || '';
+
         const payload = buildPayload({
             mapping,
             courseRow,
             bannerRow,
             contentData,
             courseTypeRow,
+            sectionHtml,
         });
 
         return {
@@ -118,6 +129,7 @@ async function loadMigrationSourceData(options = {}) {
             courseRows: [],
             bannerRows: [],
             contentRows: [],
+            sectionDatasets: {},
             courseTypeMap: buildCourseTypeMapById(courseTypeRows),
             mapping,
         };
@@ -133,19 +145,21 @@ async function loadMigrationSourceData(options = {}) {
         courseRows.map((row) => String(row.id ?? '').trim()).filter(Boolean),
     );
 
-    const [bannerRows, contentRows] = await Promise.all([
+    const [bannerRows, contentRows, sectionDatasets] = await Promise.all([
         collectCsvRowsWhere(config.csv.banner, (row) =>
             idSetForRelated.has(String(row.course_id ?? '').trim()),
         ),
         collectCsvRowsWhere(config.csv.content, (row) =>
             idSetForRelated.has(String(row.course_id ?? '').trim()),
         ),
+        loadSectionDatasets(config, idSetForRelated),
     ]);
 
     return {
         courseRows,
         bannerRows,
         contentRows,
+        sectionDatasets,
         courseTypeMap: buildCourseTypeMapById(courseTypeRows),
         mapping,
     };
@@ -331,7 +345,7 @@ function renderContentSection(title, details) {
     return cleanDetails;
 }
 
-function buildPayload({ mapping, courseRow, bannerRow, contentData, courseTypeRow = {} }) {
+function buildPayload({ mapping, courseRow, bannerRow, contentData, courseTypeRow = {}, sectionHtml = '' }) {
     const payload = {};
 
     for (const [targetField, rule] of Object.entries(mapping)) {
@@ -345,7 +359,10 @@ function buildPayload({ mapping, courseRow, bannerRow, contentData, courseTypeRo
 
     payload.slug = payload.slug || slugify(payload.title || courseRow.url_mask || courseRow.course_name || '');
     payload.title = payload.title || courseRow.course_name || '';
-    payload.course_content = payload.course_content || contentData.merged_content || '';
+    // sectionHtml is built from tbl_course_section_type_mapping ordered by section_position,
+    // mirroring the legacy PHP CourseLib::getSections() algorithm.
+    // Falls back to the flat merged_content if no section data is available.
+    payload.course_content = sectionHtml || payload.course_content || contentData.merged_content || '';
     payload.header_tag_snippets = normalizeJsonArray(payload.header_tag_snippets);
     payload.footer_tag_snippets = normalizeJsonArray(payload.footer_tag_snippets);
     payload.course_tags = normalizeCourseTags(payload.course_tags);

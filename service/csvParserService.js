@@ -7,6 +7,7 @@ function createParserPipeline(filePath) {
         parse({
             columns: true,
             relax_column_count: true,
+            relax_quotes: true,
             skip_empty_lines: true,
         }),
     );
