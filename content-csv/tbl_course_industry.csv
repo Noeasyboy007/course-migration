@@ -1,0 +1,74 @@
+"id","course_id","course_industry_name","status","added_date","modified_date"
+"1","1","Industries","A","2019-10-17 13:38:35","2019-10-17 14:10:54"
+"2","2","Industry","D","2019-10-19 13:37:15","2019-10-23 15:10:50"
+"3","3","Industries","A","2019-10-21 16:39:42","2019-11-14 15:11:32"
+"4","4","Relevant Industries","A","2019-10-21 17:26:41","2019-12-03 16:12:57"
+"5","5","Relevant Industries","A","2019-10-21 18:26:34","2023-06-28 14:06:35"
+"6","6","Relevant Industries","A","2019-10-21 21:03:32","2023-06-05 13:06:27"
+"7","7","Relevant Industries","A","2019-10-22 11:43:53",NULL
+"8","8","Relevant Industries","A","2019-10-22 13:38:05","2019-11-16 17:11:14"
+"9","10","Relevant Industries","A","2019-10-22 14:42:55",NULL
+"10","9","Relevant Industries","A","2019-10-22 15:45:52","2023-09-21 14:09:43"
+"11","9","Relevant industry","D","2019-10-22 15:49:00","2021-05-13 16:05:24"
+"12","11","Relevant Industries","A","2019-10-22 16:16:45",NULL
+"13","13","Relevant Industries","A","2019-10-22 18:25:39",NULL
+"14","14","Relevant Industries","A","2019-10-22 18:28:57",NULL
+"15","16","Relevant Industries","A","2019-10-23 12:01:09","2021-07-22 16:07:21"
+"16","15","Relevant Industries","P","2019-10-23 12:05:22",NULL
+"17","15","Relevant Industries","A","2019-10-23 12:14:40","2019-10-23 12:10:33"
+"18","17","Relevant Industries","A","2019-10-23 12:20:19",NULL
+"19","18","Relevant Industries","A","2019-10-23 12:29:38","2019-10-23 12:10:23"
+"20","20","Relevant Industries","A","2019-10-23 13:26:42",NULL
+"21","19","Relevant Industries","P","2019-10-23 13:30:43",NULL
+"22","19","Relevant Industries","A","2019-10-23 13:34:50",NULL
+"23","22","Relevant Industries","A","2019-10-23 15:30:05","2021-03-20 15:03:30"
+"24","23","Relevant Industries","A","2019-10-23 15:50:51",NULL
+"25","2","Relevant Industries","A","2019-10-23 16:06:02","2023-07-24 18:07:02"
+"26","26","Relevant Industries","A","2019-10-25 12:38:07","2019-10-25 12:10:07"
+"27","27","Relevant Industries","A","2019-11-12 18:21:08",NULL
+"28","28","Relevant Industries","A","2019-11-12 19:16:57",NULL
+"29","29","Relevant Industries","A","2019-11-12 23:40:30",NULL
+"30","30","Relevant Industries","A","2019-11-13 00:14:20",NULL
+"31","31","Relevant Industries","A","2019-11-13 02:06:15",NULL
+"32","32","Relevant Industries","A","2019-11-13 14:41:50",NULL
+"33","33","Relevant Industries","A","2019-11-13 15:42:40",NULL
+"34","34","Relevant Industries","A","2019-11-13 23:51:58",NULL
+"35","35","Relevant Industries","A","2019-11-14 00:28:44",NULL
+"36","36","Relevant Industries","A","2019-11-14 00:59:32",NULL
+"37","37","Relevant Industries","A","2019-11-14 01:56:15",NULL
+"38","38","Relevant Industries","A","2019-11-14 02:42:56",NULL
+"39","39","Relevant Industries","A","2019-11-15 00:17:32",NULL
+"40","40","Relevant Industries","A","2019-11-15 00:45:07",NULL
+"41","41","Relevant Industries","A","2019-11-15 01:05:55",NULL
+"42","42","Relevant Industries","A","2019-11-15 02:40:12",NULL
+"43","61","Relevant Industries","A","2019-11-21 20:58:54",NULL
+"44","62","Relevant Industries","A","2019-11-21 23:46:34",NULL
+"45","72","Relevant Industries","A","2020-01-20 13:48:58",NULL
+"46","74","Relevant Industries","A","2020-03-25 21:20:45",NULL
+"47","75","Relevant Industries","A","2020-04-08 17:17:54",NULL
+"48","78","Industry Academia Panel","D","2020-05-04 15:22:00","2020-05-04 15:05:30"
+"49","95","Relevant Industries","A","2020-07-22 13:03:32","2024-05-07 16:05:41"
+"50","71","Relevant Industries","A","2020-07-24 14:57:23",NULL
+"51","98","Relevant Industries","P","2020-09-01 13:50:56",NULL
+"52","101","Relevant Industries","A","2020-09-11 13:22:11","2024-08-22 19:08:27"
+"53","104","Relevant Industries","A","2020-09-25 13:53:03","2020-11-02 13:11:29"
+"54","105","Relevant Industries","A","2020-10-03 13:01:58",NULL
+"55","109","Industries","A","2020-10-29 10:16:45",NULL
+"56","99","Relevant Industries","A","2020-12-05 15:01:13",NULL
+"57","121","Relevant Industries","A","2021-01-26 11:45:54",NULL
+"58","140","Online Faculty","D","2021-06-12 06:26:22","2021-06-12 06:06:51"
+"59","143","Relevant Industries","A","2021-06-30 13:42:02","2023-09-24 15:09:55"
+"60","144","Relevant Industries","A","2021-06-30 15:05:12",NULL
+"61","145","Relevant industries","A","2021-06-30 15:33:19",NULL
+"62","147","Relevant Industries","A","2021-07-24 13:51:53",NULL
+"63","148","Relevant Industries","A","2021-07-24 15:49:41",NULL
+"64","152","Relevant Industries","A","2021-08-13 16:22:09",NULL
+"65","153","Relevant Industries","D","2021-08-14 11:30:40","2023-10-10 22:10:25"
+"66","180","Relevant Industries","A","2022-02-18 19:30:46","2022-02-18 21:02:26"
+"67","182","Relevant Industries","A","2022-02-20 05:43:04",NULL
+"68","225","Relevant Industries","A","2023-05-03 16:51:48","2023-05-03 16:05:19"
+"69","162","Guest Lecture","D","2023-06-03 12:48:33","2023-06-03 12:06:06"
+"70","235","Relevant Industries","A","2023-07-17 15:32:17",NULL
+"71","273","Industries","A","2024-03-22 14:24:42","2024-06-06 16:06:17"
+"72","299","Relevant Industries","A","2024-08-23 13:04:03",NULL
+"73","367","Industries","A","2025-11-05 16:11:50",NULL

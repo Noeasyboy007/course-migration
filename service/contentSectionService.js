@@ -82,8 +82,13 @@ async function loadSectionDatasets(config, courseIdSet) {
         specialSectionRows,
         courseLegalExpertRows,
         legalExpertRows,
+        courseTestimonialRows,
         testimonialsMasterRows,
+        courseVideoTestimonialRows,
         videoTestimonialsMasterRows,
+        courseIndustryRows,
+        courseIndustryMappingRows,
+        courseFormRows,
         coursePlanTypeMappingRows,
         coursePlanTypeMasterRows,
     ] = await Promise.all([
@@ -105,9 +110,17 @@ async function loadSectionDatasets(config, courseIdSet) {
         collectCsvRowsWhere(cc.specialSection,           byCourse),
         collectCsvRowsWhere(cc.courseLegalExpert,        byCourse),
         collectAllCsvRows(cc.legalExpert),
-        // testimonials/video: master tables carry course_id directly
+        // testimonials: section-header (aritra/) + master (aritra/)
+        collectCsvRowsWhere(cc.courseTestimonials,       byCourse),
         collectCsvRowsWhere(cc.testimonialsMaster,       byCourse),
+        // video_testimonials: section-header w/ JSON selection (content-csv/) + master (aritra/)
+        collectCsvRowsWhere(cc.courseVideoTestimonials,  byCourse),
         collectCsvRowsWhere(cc.videoTestimonialsMaster,  byCourse),
+        // industry
+        collectCsvRowsWhere(cc.courseIndustry,           byCourse),
+        collectCsvRowsWhere(cc.courseIndustryMapping,    byCourse),
+        // forms (section_type = 'forms') — only tbl_course_form
+        collectCsvRowsWhere(cc.courseForm,               byCourse),
         collectCsvRowsWhere(cc.coursePlanTypeMapping,    byCourse),
         collectAllCsvRows(cc.coursePlanTypeMaster),
     ]);
@@ -117,10 +130,9 @@ async function loadSectionDatasets(config, courseIdSet) {
         programOverviewByCourseId:         indexBy(programOverviewRows,           'course_id'),
         promoVideoById:                    indexBy(promoVideoRows,                'id'),
         academiaPanelById:                 indexBy(academiaPanelRows,             'id'),
-        // mapping keyed by course_academia_panel_id AND course_id for flexible lookup
         academiaPanelMappingByPanelId:     groupBy(academiaPanelMappingRows,     'course_academia_panel_id'),
         academiaPanelMappingByCourseId:    groupBy(academiaPanelMappingRows,     'course_id'),
-        // faculty keyed by course_id (tbl_course_faculty_mapping has course_id directly)
+        // faculty: keyed by course_id (tbl_course_faculty_mapping has course_id directly)
         facultyMappingByCourseId:          groupBy(facultyMappingRows,           'course_id'),
         facultyMasterById:                 indexBy(facultyMasterRows,             'id'),
         courseFaqById:                     indexBy(courseFaqRows,                 'id'),
@@ -133,9 +145,17 @@ async function loadSectionDatasets(config, courseIdSet) {
         specialSectionById:                indexBy(specialSectionRows,            'id'),
         courseLegalExpertById:             indexBy(courseLegalExpertRows,         'id'),
         legalExpertByCourseId:             groupBy(legalExpertRows,               'course_id'),
-        // testimonials: master tables carry course_id directly
+        // testimonials
+        courseTestimonialsById:            indexBy(courseTestimonialRows,         'id'),
         testimonialsMasterByCourseId:      groupBy(testimonialsMasterRows,        'course_id'),
+        // video_testimonials
+        courseVideoTestimonialsById:       indexBy(courseVideoTestimonialRows,    'id'),
         videoTestimonialsMasterByCourseId: groupBy(videoTestimonialsMasterRows,   'course_id'),
+        // industry
+        courseIndustryById:                indexBy(courseIndustryRows,            'id'),
+        courseIndustryMappingByIndustryId: groupBy(courseIndustryMappingRows,    'course_industry_id'),
+        // forms (section_type = 'forms')
+        courseFormById:                    indexBy(courseFormRows,                 'id'),
         coursePlanTypeMappingByCourseId:   groupBy(coursePlanTypeMappingRows,     'course_id'),
         coursePlanTypeMasterById:          indexBy(coursePlanTypeMasterRows,      'id'),
     };
@@ -293,14 +313,34 @@ function buildCourseContentHtml(courseId, contentRowsById, ds) {
         } else if (stype === 'testimonials') {
             html = renderTestimonials(sid, courseId, ds);
             if (html && inMenu) {
-                navHref = '#testimonials';
-                navText = 'Testimonials';
+                const tRow = ds.courseTestimonialsById.get(sid);
+                const heading = cleanText(tRow && tRow.course_testimonial_name) || 'Testimonials';
+                navHref = '#' + slugify(heading);
+                navText = heading;
             }
         } else if (stype === 'video_testimonials') {
             html = renderVideoTestimonials(sid, courseId, ds);
             if (html && inMenu) {
-                navHref = '#success-stories';
-                navText = 'Success Stories';
+                const vtRow = ds.courseVideoTestimonialsById.get(sid);
+                const heading = cleanText(vtRow && vtRow.course_video_testimonial_name) || 'Success Stories';
+                navHref = '#' + slugify(heading);
+                navText = heading;
+            }
+        } else if (stype === 'industry') {
+            html = renderIndustry(sid, courseId, ds);
+            if (html && inMenu) {
+                const indRow = ds.courseIndustryById.get(sid);
+                const heading = cleanText(indRow && indRow.course_industry_name) || 'Industries';
+                navHref = '#' + slugify(heading);
+                navText = heading;
+            }
+        } else if (stype === 'forms') {
+            html = renderForm(sid, courseId, ds);
+            if (html && inMenu) {
+                const fRow = ds.courseFormById.get(sid);
+                const heading = cleanText(fRow && fRow.course_form_name) || 'Enquiry';
+                navHref = '#' + slugify(heading);
+                navText = heading;
             }
         } else if (stype === 'legal_expert') {
             html = renderLegalExpert(sid, courseId, ds);
@@ -768,12 +808,17 @@ function renderFaq(sectionTypeId, courseId, ds) {
 }
 
 /**
- * testimonials → tbl_testimonials_master (has course_id directly)
- * Note: tbl_course_testimonials section-header table is not available.
- * We use a default heading and fetch all master rows for the course.
+ * testimonials → tbl_course_testimonials (section header) + tbl_testimonials_master
+ * PHP: getTestimonials — lookup section by id + course_id, then all master rows
+ * for the course ordered by testimonials_position ASC.
  */
 function renderTestimonials(sectionTypeId, courseId, ds) {
-    const heading = 'Testimonials';
+    const section = ds.courseTestimonialsById.get(sectionTypeId);
+    if (!section) return '';
+    if (String(section.course_id ?? '').trim() !== courseId) return '';
+    if (section.status !== 'A') return '';
+
+    const heading = cleanText(section.course_testimonial_name) || 'Testimonials';
     const id      = slugify(heading);
 
     const testimonials = (ds.testimonialsMasterByCourseId.get(courseId) || [])
@@ -802,17 +847,49 @@ function renderTestimonials(sectionTypeId, courseId, ds) {
 }
 
 /**
- * video_testimonials → tbl_video_testimonials_master (has course_id directly)
- * Note: tbl_course_video_testimonials section-header table is not available.
- * We fetch all master rows for the course sorted by vdo_testimonials_position.
+ * video_testimonials → tbl_course_video_testimonials (section header with JSON selection)
+ *                    + tbl_video_testimonials_master (actual video data)
+ * PHP: getVideoTestimonials — lookup section by id + course_id, parse
+ * testimonials_selected JSON to filter IDs, parse testimonials_order JSON for
+ * ordering (falls back to vdo_testimonials_position ASC).
  */
 function renderVideoTestimonials(sectionTypeId, courseId, ds) {
-    const heading = 'Success Stories';
+    const section = ds.courseVideoTestimonialsById.get(sectionTypeId);
+    if (!section) return '';
+    if (String(section.course_id ?? '').trim() !== courseId) return '';
+    if (section.status !== 'A') return '';
+
+    const heading = cleanText(section.course_video_testimonial_name) || 'Success Stories';
     const id      = slugify(heading);
 
-    const videos = (ds.videoTestimonialsMasterByCourseId.get(courseId) || [])
-        .filter((v) => v.status === 'A')
-        .sort((a, b) => Number(a.vdo_testimonials_position || 0) - Number(b.vdo_testimonials_position || 0));
+    let videos = (ds.videoTestimonialsMasterByCourseId.get(courseId) || [])
+        .filter((v) => v.status === 'A');
+
+    // Filter by testimonials_selected JSON (array of IDs)
+    const selectedRaw = cleanText(section.testimonials_selected);
+    if (selectedRaw) {
+        try {
+            const selectedIds = new Set(JSON.parse(selectedRaw).map(String));
+            videos = videos.filter((v) => selectedIds.has(String(v.id ?? '').trim()));
+        } catch (_) { /* keep all */ }
+    }
+
+    // Order by testimonials_order JSON, else by vdo_testimonials_position
+    const orderRaw = cleanText(section.testimonials_order);
+    if (orderRaw) {
+        try {
+            const orderIds = JSON.parse(orderRaw).map(String);
+            const orderMap = new Map(orderIds.map((vid, idx) => [vid, idx]));
+            videos.sort((a, b) =>
+                (orderMap.get(String(a.id ?? '').trim()) ?? 9999) -
+                (orderMap.get(String(b.id ?? '').trim()) ?? 9999),
+            );
+        } catch (_) {
+            videos.sort((a, b) => Number(a.vdo_testimonials_position || 0) - Number(b.vdo_testimonials_position || 0));
+        }
+    } else {
+        videos.sort((a, b) => Number(a.vdo_testimonials_position || 0) - Number(b.vdo_testimonials_position || 0));
+    }
 
     if (!videos.length) return '';
 
@@ -879,6 +956,65 @@ function renderLegalExpert(sectionTypeId, courseId, ds) {
         `<div class="cc-subsection"${id ? ` id="${id}"` : ''}>\n` +
         `<h2 class="cc-sub-title">${escapeHtml(heading)}</h2>\n` +
         `<div class="row">\n${experts.join('\n')}\n</div>\n` +
+        `</div>`
+    );
+}
+
+/**
+ * industry → tbl_course_industry (section header) + tbl_course_industry_mapping
+ * PHP: getIndustries — lookup section by id + course_id, then mapping rows by
+ * course_industry_id + course_id + status='A'. Selects d.industry_name, d.image_name
+ * from the industry master (not available as CSV — renders names not available).
+ */
+function renderIndustry(sectionTypeId, courseId, ds) {
+    const section = ds.courseIndustryById.get(sectionTypeId);
+    if (!section) return '';
+    if (String(section.course_id ?? '').trim() !== courseId) return '';
+    if (section.status !== 'A') return '';
+
+    const heading = cleanText(section.course_industry_name) || 'Industries';
+    const id      = slugify(heading);
+
+    const mappingRows = (ds.courseIndustryMappingByIndustryId.get(sectionTypeId) || [])
+        .filter((m) => m.status === 'A' && String(m.course_id ?? '').trim() === courseId);
+
+    if (!mappingRows.length) return '';
+
+    // industry master (tbl_industry_master) is not in CSV export; render industry IDs as placeholder tags
+    const tags = mappingRows.map((m) => {
+        const indId = cleanText(m.industries_id);
+        return `<span class="industry-tag" data-id="${escapeHtml(indId)}">Industry #${escapeHtml(indId)}</span>`;
+    });
+
+    return (
+        `<div class="cc-subsection"${id ? ` id="${id}"` : ''}>\n` +
+        `<h2 class="cc-sub-title">${escapeHtml(heading)}</h2>\n` +
+        `<div class="industry-tags">\n${tags.join('\n')}\n</div>\n` +
+        `</div>`
+    );
+}
+
+/**
+ * forms (section_type = 'forms') → tbl_course_form only
+ * PHP: getForms — looks up the course form row by sectionTypeId + courseId.
+ * form_id from the row is used as the data-form-id attribute so the new
+ * system can embed the correct form widget.
+ */
+function renderForm(sectionTypeId, courseId, ds) {
+    const section = ds.courseFormById.get(sectionTypeId);
+    if (!section) return '';
+    if (String(section.course_id ?? '').trim() !== courseId) return '';
+    if (section.status !== 'A') return '';
+
+    const heading = cleanText(section.course_form_name) || 'Enquiry Form';
+    const id      = slugify(heading);
+    const formId  = cleanText(section.form_id);
+
+    return (
+        `<div class="cc-subsection"${id ? ` id="${id}"` : ''}>\n` +
+        `<h2 class="cc-sub-title">${escapeHtml(heading)}</h2>\n` +
+        `<div class="cc-form-wrap"${formId ? ` data-form-id="${escapeHtml(formId)}"` : ''}>\n` +
+        `</div>\n` +
         `</div>`
     );
 }
