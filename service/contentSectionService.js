@@ -379,7 +379,8 @@ function buildCourseContentHtml(courseId, contentRowsById, ds) {
         ? `<div class="cc-layout">\n${sidebarHtml}\n<div class="cc-sidebar-overlay">&nbsp;</div>\n<div class="cc-main">\n${mainHtmlParts.join('\n')}\n</div>\n</div>`
         : '';
 
-    return [ccTopHtml, ccLayoutHtml].filter(Boolean).join('\n');
+    const rawHtml = [ccTopHtml, ccLayoutHtml].filter(Boolean).join('\n');
+    return stripCssFromHtml(rawHtml);
 }
 
 // ─── Top section renderers ────────────────────────────────────────────────────
@@ -1062,6 +1063,17 @@ function escapeHtml(value) {
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#39;');
+}
+
+function stripCssFromHtml(html) {
+    if (!html) return '';
+
+    return String(html)
+        // remove embedded stylesheet blocks
+        .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '')
+        // remove inline style attributes only (keep classes/HTML structure unchanged)
+        .replace(/\sstyle="[^"]*"/gi, '')
+        .replace(/\sstyle='[^']*'/gi, '');
 }
 
 module.exports = { loadSectionDatasets, buildSectionContentMap };

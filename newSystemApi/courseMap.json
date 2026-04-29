@@ -65,6 +65,8 @@
 
     "refund_policy": "show_new_refund_policy", // tbl_course.show_new_refund_policy Y=true, N=false
 
+    "logo_type": "show_govt_medhavi_logo", // tbl_course.show_govt_medhavi_logo 0,1,2,3
+
     "send_to_timepay": "false",  // default to false
 
     "send_to_leadsquared": "true",  // default to true

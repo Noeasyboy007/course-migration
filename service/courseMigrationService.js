@@ -497,6 +497,11 @@ function normalizePayload(payload, sourceContext = {}) {
             continue;
         }
 
+        if (key === 'logo_type') {
+            payload[key] = normalizeLogoType(payload[key]);
+            continue;
+        }
+
         if (typeof payload[key] === 'string') {
             payload[key] = cleanText(payload[key]);
         }
@@ -649,6 +654,10 @@ function normalizeIsPublishedFromHideFromList(value) {
     }
 
     return false;
+}
+
+function normalizeLogoType(value) {
+    return cleanText(value);
 }
 
 function normalizeAmount(value) {
