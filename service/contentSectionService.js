@@ -692,7 +692,7 @@ function renderSyllabus(sectionTypeId, courseId, ds) {
         return (
             `<div class="moduleWrap">\n` +
             `<section class="ac-container">\n` +
-            `<div><input checked="checked" id="ac-${accIdx}" name="accordion-1" type="checkbox" />\n` +
+            `<div><input id="ac-${accIdx}" name="accordion-1" type="checkbox" />\n` +
             `<label for="ac-${accIdx}">${escapeHtml(modName.toUpperCase())}</label>\n` +
             `<article class="ac-small">${chapters.join('\n')}</article>\n` +
             `</div>\n</section>\n</div>`
