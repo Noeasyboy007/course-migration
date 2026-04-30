@@ -828,7 +828,7 @@ function renderTestimonials(sectionTypeId, courseId, ds) {
         .map((t) => {
             const reviewer    = cleanText(t.reviewer);
             const details     = cleanText(t.reviewer_details);
-            const testimonial = cleanText(t.testimonials);
+            const testimonial = cleanHtml(cleanText(t.testimonials));
             return (
                 `<div class="testimonialWrap">\n` +
                 `<div class="testimonialText"><p>${testimonial}</p></div>\n` +
@@ -1054,6 +1054,12 @@ function cleanText(value) {
     if (value === null || value === undefined) return '';
     const s = String(value);
     return s.toUpperCase() === 'NULL' ? '' : s.trim();
+}
+
+function cleanHtml(html) {
+    if (!html) return '';
+    // Remove empty p tags
+    return html.replace(/<p>\s*<\/p>/gi, '').trim();
 }
 
 function escapeHtml(value) {
