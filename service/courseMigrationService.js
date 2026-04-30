@@ -682,6 +682,10 @@ function normalizeDurationMinutes(durationValue, durationType) {
         return String(Math.round(numericDuration * 30.4166667 * 24 * 60));
     }
 
+    if (normalizedType === 'years' || normalizedType === 'year' || normalizedType === 'yr' || normalizedType === 'yrs') {
+        return String(Math.round(numericDuration * 365 * 24 * 60));
+    }
+
     return String(Math.round(numericDuration));
 }
 
