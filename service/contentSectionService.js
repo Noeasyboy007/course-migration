@@ -503,8 +503,8 @@ function renderPromoVideo(sectionTypeId, courseId, ds) {
     if (!videos.length) return '';
 
     const cards = videos.map((v) => {
-        const headerText  = cleanText(v.header_text);
-        const normalText  = cleanText(v.normal_text);
+        const headerText  = stripHtmlTags(cleanText(v.header_text));
+        const normalText  = stripHtmlTags(cleanText(v.normal_text));
         const youtubeLink = cleanText(v.youtube_link);
         const imgName     = cleanText(v.image_name);
         const imgSrc      = imgName
