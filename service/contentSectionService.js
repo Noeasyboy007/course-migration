@@ -71,6 +71,7 @@ async function loadSectionDatasets(config, courseIdSet) {
         promoVideoRows,
         academiaPanelRows,
         academiaPanelMappingRows,
+        academiaMasterRows,
         facultyMappingRows,
         facultyMasterRows,
         courseFaqRows,
@@ -88,6 +89,7 @@ async function loadSectionDatasets(config, courseIdSet) {
         videoTestimonialsMasterRows,
         courseIndustryRows,
         courseIndustryMappingRows,
+        relevantIndustriesMasterRows,
         courseFormRows,
         coursePlanTypeMappingRows,
         coursePlanTypeMasterRows,
@@ -98,6 +100,7 @@ async function loadSectionDatasets(config, courseIdSet) {
         collectCsvRowsWhere(cc.academiaPanel,            byCourse),
         // academiaPanelMapping: filter by course_id (the mapping table has course_id)
         collectCsvRowsWhere(cc.academiaPanelMapping,    byCourse),
+        collectAllCsvRows(cc.academiaMaster),
         // facultyMapping has course_id — filter to relevant courses
         collectCsvRowsWhere(cc.facultyMapping,           byCourse),
         collectAllCsvRows(cc.facultyMaster),
@@ -119,6 +122,7 @@ async function loadSectionDatasets(config, courseIdSet) {
         // industry
         collectCsvRowsWhere(cc.courseIndustry,           byCourse),
         collectCsvRowsWhere(cc.courseIndustryMapping,    byCourse),
+        collectAllCsvRows(cc.relevantIndustriesMaster),
         // forms (section_type = 'forms') — only tbl_course_form
         collectCsvRowsWhere(cc.courseForm,               byCourse),
         collectCsvRowsWhere(cc.coursePlanTypeMapping,    byCourse),
@@ -132,6 +136,7 @@ async function loadSectionDatasets(config, courseIdSet) {
         academiaPanelById:                 indexBy(academiaPanelRows,             'id'),
         academiaPanelMappingByPanelId:     groupBy(academiaPanelMappingRows,     'course_academia_panel_id'),
         academiaPanelMappingByCourseId:    groupBy(academiaPanelMappingRows,     'course_id'),
+        academiaMasterById:                indexBy(academiaMasterRows,            'id'),
         // faculty: keyed by course_id (tbl_course_faculty_mapping has course_id directly)
         facultyMappingByCourseId:          groupBy(facultyMappingRows,           'course_id'),
         facultyMasterById:                 indexBy(facultyMasterRows,             'id'),
@@ -154,6 +159,7 @@ async function loadSectionDatasets(config, courseIdSet) {
         // industry
         courseIndustryById:                indexBy(courseIndustryRows,            'id'),
         courseIndustryMappingByIndustryId: groupBy(courseIndustryMappingRows,    'course_industry_id'),
+        relevantIndustriesMasterById:      indexBy(relevantIndustriesMasterRows,  'id'),
         // forms (section_type = 'forms')
         courseFormById:                    indexBy(courseFormRows,                 'id'),
         coursePlanTypeMappingByCourseId:   groupBy(coursePlanTypeMappingRows,     'course_id'),
@@ -632,17 +638,33 @@ function renderAcademiaPanel(sectionTypeId, courseId, ds) {
 
     if (!mappingRows.length) return '';
 
-    // Attempt to render panel entries (without master details we show placeholder divs)
-    const members = mappingRows.map((m) => {
-        const apId = String(m.academia_panel_id ?? '').trim();
-        return (
-            `<div class="col-12 col-sm-6">\n` +
-            `<div class="panelWrap">\n` +
-            `<div class="panelImg"></div>\n` +
-            `<div class="panelText"><span>Panel Member ${apId}</span>\n</div>\n` +
-            `</div>\n</div>`
-        );
-    });
+    const members = mappingRows
+        .map((m) => {
+            const masterId = String(m.academia_panel_id ?? '').trim();
+            const master   = ds.academiaMasterById.get(masterId);
+            if (!master || master.status !== 'A') return '';
+
+            const name        = cleanText(master.person_name);
+            const designation = cleanText(master.person_designation);
+            const linkedin    = cleanText(master.person_linkedin);
+            const img         = cleanText(master.image_name);
+            const imgSrc      = img
+                ? `${S3}/uploads/Industry-academia/thumbs/${encodeURIComponent(img)}`
+                : '';
+            const linkedinHtml = linkedin
+                ? `\n<div class="profLink"><a href="${escapeHtml(linkedin)}" target="_blank"><img alt="LinkedIn" loading="lazy" src="${S3}/images/social-media/Linkedin.svg" /></a></div>`
+                : '';
+
+            return (
+                `<div class="col-12 col-sm-6">\n` +
+                `<div class="panelWrap">\n` +
+                `<div class="panelImg">${imgSrc ? `<img alt="${escapeHtml(name)}" loading="lazy" src="${imgSrc}" />` : ''}</div>\n` +
+                `<div class="panelText"><span>${escapeHtml(name)}</span>\n` +
+                `<p>${escapeHtml(designation)}</p>${linkedinHtml}\n</div>\n` +
+                `</div>\n</div>`
+            );
+        })
+        .filter(Boolean);
 
     return (
         `<div class="cc-subsection"${id ? ` id="${id}"` : ''}>\n` +
@@ -829,10 +851,17 @@ function renderTestimonials(sectionTypeId, courseId, ds) {
             const reviewer    = cleanText(t.reviewer);
             const details     = cleanText(t.reviewer_details);
             const testimonial = cleanHtml(cleanText(t.testimonials));
+            const img         = cleanText(t.image_name);
+            const imgSrc      = img
+                ? `${S3}/uploads/testimonials/thumbs/${encodeURIComponent(img)}`
+                : '';
             return (
                 `<div class="testimonialWrap">\n` +
                 `<div class="testimonialText"><p>${testimonial}</p></div>\n` +
-                `<div class="testimonialAuthor"><span>${escapeHtml(reviewer)}</span><p>${escapeHtml(details)}</p></div>\n` +
+                `<div class="testimonialAuthor">\n` +
+                `<div class="testimonialImg">${imgSrc ? `<img alt="${escapeHtml(reviewer)}" loading="lazy" src="${imgSrc}" />` : ''}</div>\n` +
+                `<div class="testimonialInfo"><span>${escapeHtml(reviewer)}</span><p>${escapeHtml(details)}</p></div>\n` +
+                `</div>\n` +
                 `</div>`
             );
         });
@@ -840,7 +869,7 @@ function renderTestimonials(sectionTypeId, courseId, ds) {
     if (!testimonials.length) return '';
 
     return (
-        `<div class="cc-subsection"${id ? ` id="${id}"` : ''}>\n` +
+        `<div class="subContent"${id ? ` id="${id}"` : ''}>\n` +
         `<h2 class="cc-sub-title">${escapeHtml(heading)}</h2>\n` +
         `<div class="row">\n${testimonials.join('\n')}\n</div>\n` +
         `</div>`
@@ -937,15 +966,20 @@ function renderLegalExpert(sectionTypeId, courseId, ds) {
         .map((e) => {
             const name        = cleanText(e.legal_expert_name);
             const designation = cleanText(e.legal_expert_designation);
+            const comment     = stripHtmlTags(cleanText(e.legal_expert_comment));
             const img         = cleanText(e.image_name);
             const imgSrc      = img
-                ? `${S3}/uploads/legal-expert/thumbs/${encodeURIComponent(img)}`
+                ? `${S3}/uploads/legal-expert-master/thumbs/${encodeURIComponent(img)}`
                 : '';
             return (
                 `<div class="col-12 col-sm-6">\n` +
                 `<div class="panelWrap">\n` +
                 `<div class="panelImg">${imgSrc ? `<img alt="${escapeHtml(name)}" loading="lazy" src="${imgSrc}" />` : ''}</div>\n` +
-                `<div class="panelText"><span>${escapeHtml(name)}</span>\n<p>${escapeHtml(designation)}</p>\n</div>\n` +
+                `<div class="panelText">` +
+                `${comment ? `<p>${escapeHtml(comment)}</p>\n` : ''}` +
+                `<span>${escapeHtml(name)}</span>\n` +
+                `<p>${escapeHtml(designation)}</p>\n` +
+                `</div>\n` +
                 `</div>\n</div>`
             );
         })
@@ -962,10 +996,10 @@ function renderLegalExpert(sectionTypeId, courseId, ds) {
 }
 
 /**
- * industry → tbl_course_industry (section header) + tbl_course_industry_mapping
- * PHP: getIndustries — lookup section by id + course_id, then mapping rows by
- * course_industry_id + course_id + status='A'. Selects d.industry_name, d.image_name
- * from the industry master (not available as CSV — renders names not available).
+ * industry → tbl_course_industry (section header)
+ *          + tbl_course_industry_mapping (filtered by course_industry_id + course_id)
+ *          + tbl_relevant_industries_master (joined on industries_id = master.id)
+ * PHP: getIndustries — selects d.industry_name, d.image_name from the master.
  */
 function renderIndustry(sectionTypeId, courseId, ds) {
     const section = ds.courseIndustryById.get(sectionTypeId);
@@ -973,7 +1007,7 @@ function renderIndustry(sectionTypeId, courseId, ds) {
     if (String(section.course_id ?? '').trim() !== courseId) return '';
     if (section.status !== 'A') return '';
 
-    const heading = cleanText(section.course_industry_name) || 'Industries';
+    const heading = cleanText(section.course_industry_name) || 'Relevant Industries';
     const id      = slugify(heading);
 
     const mappingRows = (ds.courseIndustryMappingByIndustryId.get(sectionTypeId) || [])
@@ -981,16 +1015,33 @@ function renderIndustry(sectionTypeId, courseId, ds) {
 
     if (!mappingRows.length) return '';
 
-    // industry master (tbl_industry_master) is not in CSV export; render industry IDs as placeholder tags
-    const tags = mappingRows.map((m) => {
-        const indId = cleanText(m.industries_id);
-        return `<span class="industry-tag" data-id="${escapeHtml(indId)}">Industry #${escapeHtml(indId)}</span>`;
-    });
+    const items = mappingRows
+        .map((m) => {
+            const masterId = String(m.industries_id ?? '').trim();
+            const master   = ds.relevantIndustriesMasterById.get(masterId);
+            if (!master || master.status !== 'A') return '';
+
+            const name   = cleanText(master.industry_name);
+            const img    = cleanText(master.image_name);
+            const imgSrc = img
+                ? `${S3}/uploads/relevant-industries/thumbs/${encodeURIComponent(img)}`
+                : '';
+
+            return (
+                `<div class="industry-item">\n` +
+                `<div class="industry-icon">${imgSrc ? `<img alt="${escapeHtml(name)}" loading="lazy" src="${imgSrc}" />` : ''}</div>\n` +
+                `<span class="industry-name">${escapeHtml(name)}</span>\n` +
+                `</div>`
+            );
+        })
+        .filter(Boolean);
+
+    if (!items.length) return '';
 
     return (
         `<div class="cc-subsection"${id ? ` id="${id}"` : ''}>\n` +
         `<h2 class="cc-sub-title">${escapeHtml(heading)}</h2>\n` +
-        `<div class="industry-tags">\n${tags.join('\n')}\n</div>\n` +
+        `<div class="industry-grid">\n${items.join('\n')}\n</div>\n` +
         `</div>`
     );
 }
@@ -1060,6 +1111,10 @@ function cleanHtml(html) {
     if (!html) return '';
     // Remove empty p tags
     return html.replace(/<p>\s*<\/p>/gi, '').trim();
+}
+
+function stripHtmlTags(value) {
+    return String(value || '').replace(/<[^>]*>/g, '').trim();
 }
 
 function escapeHtml(value) {

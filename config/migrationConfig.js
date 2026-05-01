@@ -34,6 +34,7 @@ function getMigrationConfig() {
             // course academia panel
             academiaPanel:           path.join(ROOT_DIR, 'content-csv', 'tbl_course_academia_panel.csv'),
             academiaPanelMapping:    path.join(ROOT_DIR, 'content-csv', 'tbl_course_academia_panel_mapping.csv'),
+            academiaMaster:          path.join(ROOT_DIR, 'content-csv', 'tbl_industry_academia_master.csv'),
             // faculty: tbl_course_faculty_mapping has course_id + faculty_id directly; tbl_faculty_master for details
             facultyMapping:          path.join(ROOT_DIR, 'content-csv', 'tbl_course_faculty_mapping.csv'),
             facultyMaster:           path.join(ROOT_DIR, 'content-csv', 'tbl_faculty_master.csv'),
@@ -60,6 +61,7 @@ function getMigrationConfig() {
             // course industry
             courseIndustry:          path.join(ROOT_DIR, 'content-csv', 'tbl_course_industry.csv'),
             courseIndustryMapping:   path.join(ROOT_DIR, 'content-csv', 'tbl_course_industry_mapping.csv'),
+            relevantIndustriesMaster: path.join(ROOT_DIR, 'content-csv', 'tbl_relevant_industries_master.csv'),
             // forms
             courseForm:              path.join(ROOT_DIR, 'content-csv', 'tbl_course_form.csv'),
             // course plan type
