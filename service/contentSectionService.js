@@ -493,7 +493,7 @@ function renderPromoVideo(sectionTypeId, courseId, ds) {
         const youtubeLink = cleanText(v.youtube_link);
         const imgName     = cleanText(v.image_name);
         const imgSrc      = imgName
-            ? `${S3}/uploads/promotional-video/${encodeURIComponent(imgName)}`
+            ? `${S3}/uploads/promotional-video-image/${encodeURIComponent(imgName)}`
             : '';
 
         const embedUrl = youtubeLink
@@ -501,12 +501,16 @@ function renderPromoVideo(sectionTypeId, courseId, ds) {
             : '';
 
         return (
-            `<div class="promo-video-card">\n` +
-            (headerText ? `<h3 class="pv-header">${escapeHtml(headerText)}</h3>\n` : '') +
-            (normalText ? `<div class="pv-text">${normalText}</div>\n` : '') +
-            (embedUrl
-                ? `<div class="pv-video"><iframe allowfullscreen="" frameborder="0" height="200" loading="lazy" src="${escapeHtml(embedUrl)}" width="100%"></iframe></div>\n`
-                : (imgSrc ? `<div class="pv-thumb"><img alt="${escapeHtml(headerText)}" loading="lazy" src="${imgSrc}" /></div>\n` : '')) +
+            `<div class="col-12 col-lg-4">\n` +
+            `<div class="videowrp">\n` +
+            `<a class="videoBox pop-blur youtubeVideoPopUp" href="${escapeHtml(embedUrl)}" tabindex="0">\n` +
+            (imgSrc ? `<img loading="lazy" alt="Image" src="${imgSrc}" />\n` : '') +
+            `</a>\n` +
+            `<span class="vdoInfo">\n` +
+            `<span>${escapeHtml(headerText)}</span>\n` +
+            `<p>${escapeHtml(normalText)}</p>\n` +
+            `</span>\n` +
+            `</div>\n` +
             `</div>`
         );
     });
@@ -515,7 +519,9 @@ function renderPromoVideo(sectionTypeId, courseId, ds) {
     return (
         `<div class="cc-subsection" id="${id || 'promotional-video'}">\n` +
         `<h2 class="cc-sub-title">${escapeHtml(heading)}</h2>\n` +
-        `<div class="promo-video-grid">\n${cards.join('\n')}\n</div>\n` +
+        `<div class="container-fluid features">\n` +
+        `<div class="row">\n${cards.join('\n')}\n</div>\n` +
+        `</div>\n` +
         `</div>`
     );
 }
