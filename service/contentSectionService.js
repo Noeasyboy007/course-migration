@@ -72,6 +72,7 @@ async function loadSectionDatasets(config, courseIdSet) {
         academiaPanelRows,
         academiaPanelMappingRows,
         academiaMasterRows,
+        facultyRows,
         facultyMappingRows,
         facultyMasterRows,
         courseFaqRows,
@@ -91,6 +92,8 @@ async function loadSectionDatasets(config, courseIdSet) {
         courseIndustryMappingRows,
         relevantIndustriesMasterRows,
         courseFormRows,
+        formManagementRows,
+        coursePlanRows,
         coursePlanTypeMappingRows,
         coursePlanTypeMasterRows,
     ] = await Promise.all([
@@ -101,6 +104,7 @@ async function loadSectionDatasets(config, courseIdSet) {
         // academiaPanelMapping: filter by course_id (the mapping table has course_id)
         collectCsvRowsWhere(cc.academiaPanelMapping,    byCourse),
         collectAllCsvRows(cc.academiaMaster),
+        collectCsvRowsWhere(cc.faculty,                  byCourse),
         // facultyMapping has course_id — filter to relevant courses
         collectCsvRowsWhere(cc.facultyMapping,           byCourse),
         collectAllCsvRows(cc.facultyMaster),
@@ -123,8 +127,10 @@ async function loadSectionDatasets(config, courseIdSet) {
         collectCsvRowsWhere(cc.courseIndustry,           byCourse),
         collectCsvRowsWhere(cc.courseIndustryMapping,    byCourse),
         collectAllCsvRows(cc.relevantIndustriesMaster),
-        // forms (section_type = 'forms') — only tbl_course_form
+        // forms (section_type = 'forms')
         collectCsvRowsWhere(cc.courseForm,               byCourse),
+        collectAllCsvRows(cc.formManagement),
+        collectCsvRowsWhere(cc.coursePlan,               byCourse),
         collectCsvRowsWhere(cc.coursePlanTypeMapping,    byCourse),
         collectAllCsvRows(cc.coursePlanTypeMaster),
     ]);
@@ -137,8 +143,9 @@ async function loadSectionDatasets(config, courseIdSet) {
         academiaPanelMappingByPanelId:     groupBy(academiaPanelMappingRows,     'course_academia_panel_id'),
         academiaPanelMappingByCourseId:    groupBy(academiaPanelMappingRows,     'course_id'),
         academiaMasterById:                indexBy(academiaMasterRows,            'id'),
-        // faculty: keyed by course_id (tbl_course_faculty_mapping has course_id directly)
-        facultyMappingByCourseId:          groupBy(facultyMappingRows,           'course_id'),
+        // faculty
+        facultyById:                       indexBy(facultyRows,                   'id'),
+        facultyMappingByFacultyId:         groupBy(facultyMappingRows,           'course_faculty_id'),
         facultyMasterById:                 indexBy(facultyMasterRows,             'id'),
         courseFaqById:                     indexBy(courseFaqRows,                 'id'),
         faqQuestionsByCourseId:            groupBy(faqQuestionRows,               'course_id'),
@@ -162,6 +169,8 @@ async function loadSectionDatasets(config, courseIdSet) {
         relevantIndustriesMasterById:      indexBy(relevantIndustriesMasterRows,  'id'),
         // forms (section_type = 'forms')
         courseFormById:                    indexBy(courseFormRows,                 'id'),
+        formManagementById:                indexBy(formManagementRows,             'id'),
+        coursePlanById:                    indexBy(coursePlanRows,                 'id'),
         coursePlanTypeMappingByCourseId:   groupBy(coursePlanTypeMappingRows,     'course_id'),
         coursePlanTypeMasterById:          indexBy(coursePlanTypeMasterRows,      'id'),
     };
@@ -303,7 +312,7 @@ function buildCourseContentHtml(courseId, contentRowsById, ds) {
                 navText = 'Syllabus';
             }
         } else if (stype === 'course_plan') {
-            html = renderCoursePlan(courseId, ds);
+            html = renderCoursePlan(sid, courseId, ds);
             if (html && inMenu) {
                 navHref = '#course-plan';
                 navText = 'Course Plan';
@@ -562,18 +571,23 @@ function renderTextContentRow(row) {
 }
 
 /**
- * faculty → tbl_course_faculty_mapping (has course_id) + tbl_faculty_master
- * Note: tbl_course_faculty (section header) is no longer available; we look up members
- * directly via course_id in the mapping table and use a default heading.
+ * faculty → tbl_course_faculty (section header)
+ *          + tbl_course_faculty_mapping (filtered by course_faculty_id + course_id)
+ *          + tbl_faculty_master
+ * PHP: getFaculties — validates section by sectionTypeId + courseId, then maps
+ * by course_faculty_id + course_id ordered by position ASC.
  */
 function renderFaculty(sectionTypeId, courseId, ds) {
-    // sectionTypeId is the old tbl_course_faculty.id — used only as the HTML anchor.
-    // Members are fetched by course_id from faculty_mapping.
-    const heading = 'Here are some of our faculty members';
+    const section = ds.facultyById.get(sectionTypeId);
+    if (!section) return '';
+    if (String(section.course_id ?? '').trim() !== courseId) return '';
+    if (section.status !== 'A') return '';
+
+    const heading = cleanText(section.course_faculty_name) || 'Here are some of our faculty members';
     const id      = slugify(heading);
 
-    const members = (ds.facultyMappingByCourseId.get(courseId) || [])
-        .filter((m) => m.status === 'A')
+    const members = (ds.facultyMappingByFacultyId.get(sectionTypeId) || [])
+        .filter((m) => m.status === 'A' && String(m.course_id ?? '').trim() === courseId)
         .sort((a, b) => Number(a.position || 0) - Number(b.position || 0))
         .map((m) => {
             const master = ds.facultyMasterById.get(String(m.faculty_id ?? '').trim());
@@ -731,10 +745,20 @@ function renderSyllabus(sectionTypeId, courseId, ds) {
 }
 
 /**
- * course_plan → tbl_course_plan_type_mapping JOIN tbl_course_plan_type_master
- * PHP: getCoursePlans — joins coursePlanMapModel with plan type master, ordered by course_plan_position.
+ * course_plan → tbl_course_courseplan (section header)
+ *             + tbl_course_plan_type_mapping INNER JOIN tbl_course_plan_type_master
+ * PHP: getCoursePlans — validates section by sectionTypeId + courseId, then joins
+ * plan mapping with plan type master ordered by course_plan_position ASC.
  */
-function renderCoursePlan(courseId, ds) {
+function renderCoursePlan(sectionTypeId, courseId, ds) {
+    // Validate section header (tbl_course_courseplan)
+    const section = ds.coursePlanById.get(sectionTypeId);
+    if (!section) return '';
+    if (String(section.course_id ?? '').trim() !== courseId) return '';
+    if (section.status !== 'A') return '';
+
+    const heading = cleanText(section.course_courseplan_name) || 'Course Plan';
+
     const plans = (ds.coursePlanTypeMappingByCourseId.get(courseId) || [])
         .filter((p) => p.status === 'A')
         .sort((a, b) => Number(a.course_plan_position || 0) - Number(b.course_plan_position || 0));
@@ -787,7 +811,7 @@ function renderCoursePlan(courseId, ds) {
 
     return (
         `<div class="cc-subsection" id="course-plan">\n` +
-        `<h2 class="cc-sub-title">Course Plan</h2>\n` +
+        `<h2 class="cc-sub-title">${escapeHtml(heading)}</h2>\n` +
         `<p class="cc-para">Above prices are inclusive of all applicable taxes and charges.</p>\n` +
         `${planBoxes.join('\n')}\n` +
         `</div>`
@@ -964,21 +988,23 @@ function renderLegalExpert(sectionTypeId, courseId, ds) {
                 : String(a.sequence_tag || '').localeCompare(String(b.sequence_tag || '')),
         )
         .map((e) => {
-            const name        = cleanText(e.legal_expert_name);
-            const designation = cleanText(e.legal_expert_designation);
-            const comment     = stripHtmlTags(cleanText(e.legal_expert_comment));
-            const img         = cleanText(e.image_name);
-            const imgSrc      = img
+            const name         = cleanText(e.legal_expert_name);
+            const designation  = cleanText(e.legal_expert_designation);
+            const organisation = cleanText(e.legal_expert_organisation);
+            const comment      = stripHtmlTags(cleanText(e.legal_expert_comment));
+            const img          = cleanText(e.image_name);
+            const imgSrc       = img
                 ? `${S3}/uploads/legal-expert-master/thumbs/${encodeURIComponent(img)}`
                 : '';
             return (
                 `<div class="col-12 col-sm-6">\n` +
                 `<div class="panelWrap">\n` +
                 `<div class="panelImg">${imgSrc ? `<img alt="${escapeHtml(name)}" loading="lazy" src="${imgSrc}" />` : ''}</div>\n` +
-                `<div class="panelText">` +
-                `${comment ? `<p>${escapeHtml(comment)}</p>\n` : ''}` +
-                `<span>${escapeHtml(name)}</span>\n` +
-                `<p>${escapeHtml(designation)}</p>\n` +
+                `<div class="panelText">\n` +
+                (organisation ? `<h3 class="expert-org">${escapeHtml(organisation)}</h3>\n` : '') +
+                (comment      ? `<p class="expert-comment">${escapeHtml(comment)}</p>\n`      : '') +
+                `<span class="expert-name">${escapeHtml(name)}</span>\n` +
+                `<p class="expert-designation">${escapeHtml(designation)}</p>\n` +
                 `</div>\n` +
                 `</div>\n</div>`
             );
@@ -1058,14 +1084,17 @@ function renderForm(sectionTypeId, courseId, ds) {
     if (String(section.course_id ?? '').trim() !== courseId) return '';
     if (section.status !== 'A') return '';
 
-    const heading = cleanText(section.course_form_name) || 'Enquiry Form';
-    const id      = slugify(heading);
-    const formId  = cleanText(section.form_id);
+    const heading  = cleanText(section.course_form_name) || 'Enquiry Form';
+    const id       = slugify(heading);
+    const formId   = cleanText(section.form_id);
+
+    // INNER JOIN form_management on b.id = a.form_id (PHP: getForms)
+    const formMeta  = formId ? ds.formManagementById.get(formId) : null;
+    const formType  = cleanText(formMeta && formMeta.form_type) || 'confused_form';
 
     return (
         `<div class="cc-subsection"${id ? ` id="${id}"` : ''}>\n` +
-        `<h2 class="cc-sub-title">${escapeHtml(heading)}</h2>\n` +
-        `<div class="cc-form-wrap"${formId ? ` data-form-id="${escapeHtml(formId)}"` : ''}>\n` +
+        `<div class="cc-form-wrap" data-form-type="${escapeHtml(formType)}">\n` +
         `</div>\n` +
         `</div>`
     );
