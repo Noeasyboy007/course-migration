@@ -395,7 +395,7 @@ function buildCourseContentHtml(courseId, contentRowsById, ds) {
         : '';
 
     const rawHtml = [ccTopHtml, ccLayoutHtml].filter(Boolean).join('\n');
-    return stripCssFromHtml(rawHtml);
+    return normalizeLawsikhoLinks(stripCssFromHtml(rawHtml));
 }
 
 // ─── Top section renderers ────────────────────────────────────────────────────
@@ -1194,6 +1194,22 @@ function stripCssFromHtml(html) {
         // remove inline style attributes only (keep classes/HTML structure unchanged)
         .replace(/\sstyle="[^"]*"/gi, '')
         .replace(/\sstyle='[^']*'/gi, '');
+}
+
+/**
+ * Rewrites absolute lawsikho.com hrefs to relative paths and adds
+ * target="_blank" rel="noopener noreferrer" so they open in the new system.
+ *
+ * e.g.  href="https://lawsikho.com/refund-policy"
+ *   →   href="/refund-policy" target="_blank" rel="noopener noreferrer"
+ */
+function normalizeLawsikhoLinks(html) {
+    if (!html) return '';
+
+    return String(html).replace(
+        /href="https?:\/\/(?:www\.)?lawsikho\.com(\/[^"]*)"/gi,
+        (_, path) => `href="${path}" target="_blank" rel="noopener noreferrer"`,
+    );
 }
 
 module.exports = { loadSectionDatasets, buildSectionContentMap };
