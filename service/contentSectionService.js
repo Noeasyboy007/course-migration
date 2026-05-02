@@ -834,6 +834,7 @@ function renderFaq(sectionTypeId, courseId, ds) {
     const heading = cleanText(faqSection.course_faq_name) || 'Frequently Asked Questions (FAQs)';
     const id      = slugify(heading);
 
+    let faqIdx = 0;
     const questions = (ds.faqQuestionsByCourseId.get(courseId) || [])
         .filter((q) => q.status === 'A')
         .sort((a, b) => Number(a.faq_position || 0) - Number(b.faq_position || 0))
@@ -841,10 +842,16 @@ function renderFaq(sectionTypeId, courseId, ds) {
             const question = cleanText(q.question);
             const answer   = cleanText(q.answer);
             if (!question) return '';
+            faqIdx++;
             return (
-                `<div class="faq-item">\n` +
-                `<h3 class="faq-question">${escapeHtml(question)}</h3>\n` +
-                `<div class="faq-answer">${answer}</div>\n` +
+                `<div class="moduleWrap">\n` +
+                `<section class="ac-container">\n` +
+                `<div>\n` +
+                `<input id="faq-ac-${faqIdx}" name="faq-accordion" type="checkbox" />\n` +
+                `<label for="faq-ac-${faqIdx}">${escapeHtml(question)}</label>\n` +
+                `<article class="ac-small">${answer}</article>\n` +
+                `</div>\n` +
+                `</section>\n` +
                 `</div>`
             );
         })
@@ -855,7 +862,9 @@ function renderFaq(sectionTypeId, courseId, ds) {
     return (
         `<div class="cc-subsection cc-faq-wrap"${id ? ` id="${id}"` : ''}>\n` +
         `<h2 class="cc-sub-title">${escapeHtml(heading)}</h2>\n` +
+        `<div class="accordion" id="faq">\n` +
         `${questions.join('\n')}\n` +
+        `</div>\n` +
         `</div>`
     );
 }
@@ -954,20 +963,35 @@ function renderVideoTestimonials(sectionTypeId, courseId, ds) {
     if (!videos.length) return '';
 
     const cards = videos.map((v) => {
-        const reviewer = cleanText(v.reviewer);
-        const videoUrl = cleanText(v.video_url);
+        const reviewer        = cleanText(v.reviewer);
+        const reviewerDetails = cleanText(v.reviewer_details);
+        const videoUrl        = cleanText(v.video_url);
+        const img             = cleanText(v.image_name);
+        const imgSrc          = img
+            ? `${S3}/uploads/video_testimonials/thumbs/${encodeURIComponent(img)}`
+            : '';
+        const embedUrl = videoUrl
+            ? videoUrl.replace('watch?v=', 'embed/')
+            : videoUrl;
+
         return (
-            `<div class="videoTestimonialWrap">\n` +
-            `<div class="videoUrl"><a href="${escapeHtml(videoUrl)}" target="_blank">${escapeHtml(reviewer)}</a></div>\n` +
+            `<div class="videowrp">\n` +
+            `<a class="videoBox pop-blur youtubeVideoPopUp" href="${escapeHtml(embedUrl)}" tabindex="0">\n` +
+            (imgSrc ? `<img loading="lazy" alt="Image" src="${imgSrc}" />\n` : '') +
+            `</a>\n` +
+            `<span class="vdoInfo">\n` +
+            `<span>${escapeHtml(reviewer)}</span>\n` +
+            `<p>${escapeHtml(reviewerDetails)}</p>\n` +
+            `</span>\n` +
             `</div>`
         );
     });
 
     return (
-        `<div class="cc-subsection"${id ? ` id="${id}"` : ''}>\n` +
-        `<h2 class="cc-sub-title">${escapeHtml(heading)}</h2>\n` +
-        `<div class="row">\n${cards.join('\n')}\n</div>\n` +
-        `</div>`
+        `<section class="subContent"${id ? ` id="${id}"` : ''}>\n` +
+        `<h2 class="text-center">${escapeHtml(heading)}</h2>\n` +
+        `<div class="videoSlider hasarrow">\n${cards.join('\n')}\n</div>\n` +
+        `</section>`
     );
 }
 
