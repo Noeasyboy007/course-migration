@@ -395,7 +395,7 @@ function buildCourseContentHtml(courseId, contentRowsById, ds) {
         : '';
 
     const rawHtml = [ccTopHtml, ccLayoutHtml].filter(Boolean).join('\n');
-    return normalizeLawsikhoLinks(stripCssFromHtml(rawHtml));
+    return normalizeLawsikhoLinks(resolveVideoModals(stripCssFromHtml(rawHtml)));
 }
 
 // ─── Top section renderers ────────────────────────────────────────────────────
@@ -1209,6 +1209,52 @@ function normalizeLawsikhoLinks(html) {
     return String(html).replace(
         /href="https?:\/\/(?:www\.)?lawsikho\.com(\/[^"]*)"/gi,
         (_, path) => `href="${path}" target="_blank" rel="noopener noreferrer"`,
+    );
+}
+
+/**
+ * The quick_overview CSV HTML uses Bootstrap modals for YouTube videos:
+ *   <a class="play_btn" data-target="#video_model1" data-toggle="modal" href="#.">
+ * The actual YouTube URL lives inside the corresponding modal's iframe src.
+ *
+ * This function:
+ *  1. Scans all <div id="video_modelN"> modals and maps N → YouTube embed URL
+ *  2. Rewrites each play_btn <a> to link directly to the YouTube URL,
+ *     removing data-toggle / data-target so it works without Bootstrap JS.
+ *  3. Keeps ALL existing class names, ids and surrounding HTML unchanged.
+ */
+function resolveVideoModals(html) {
+    if (!html) return '';
+
+    // Step 1: build map  modelNumber → YouTube embed URL
+    const modalMap = new Map();
+    const modalRe  = /id="video_model(\d+)"[\s\S]*?src="(https?:\/\/(?:www\.)?youtube\.com\/embed\/[^"]+)"/g;
+    let m;
+    while ((m = modalRe.exec(html)) !== null) {
+        modalMap.set(m[1], m[2]);
+    }
+
+    if (!modalMap.size) return html;
+
+    // Step 2: patch every play_btn anchor that references a video modal
+    return html.replace(
+        /<a\s[^>]*?data-target="#video_model(\d+)"[^>]*?>/g,
+        (fullTag, modelId) => {
+            const embedUrl = modalMap.get(modelId);
+            if (!embedUrl) return fullTag;
+
+            // Convert embed URL → regular watch URL so it opens correctly in a new tab
+            // e.g. https://www.youtube.com/embed/VIDEO_ID?si=xxx → https://www.youtube.com/watch?v=VIDEO_ID
+            const watchUrl = embedUrl.replace(
+                /https?:\/\/(?:www\.)?youtube\.com\/embed\/([^?&"]+).*/,
+                'https://www.youtube.com/watch?v=$1',
+            );
+
+            return fullTag
+                .replace(/\s?data-toggle="modal"/g, '')
+                .replace(/\s?data-target="[^"]*"/g, '')
+                .replace(/href="[^"]*"/, `href="${watchUrl}" target="_blank" rel="noopener noreferrer"`);
+        },
     );
 }
 
