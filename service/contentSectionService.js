@@ -805,16 +805,35 @@ function renderCoursePlan(sectionTypeId, courseId, ds) {
             `<a class="cp-enroll-btn cp-enroll-small-btn" href="#" id="enroll-now-small-btn">Enroll now</a>`,
         ] : [];
 
+        const isFree = cssClass === 'free';
+
+        // free plan: bottom row — Sign up only (heading already shows logo + title)
+        const freeMaterialsBlock = isFree
+            ? `<div class="planWithBtn plan-with-btn-footer">\n` +
+              `<button type="button" class="btn btn-red freematerial pop-blur" data-toggle="modal">Sign up</button>\n` +
+              `</div>\n`
+            : '';
+
+        const planWithBtnHtml = isFree
+            ? `<div class="planWithBtn">\n` +
+              `<span class="plan-free-heading">\n` +
+              `<img loading="lazy" alt="" src="${S3}/images/course-details/freematerials.svg" />\n` +
+              `<span class="plan-free-title">${escapeHtml(typeName)}&nbsp;</span>\n` +
+              `</span>\n` +
+              `</div>\n`
+            : `<div class="planWithBtn"><span>${escapeHtml(typeName)}&nbsp;</span></div>\n`;
+
         return (
             `<div class="planBox ${escapeHtml(cssClass)}">\n` +
             `<div>\n` +
             `<div class="planColor">\n` +
-            `<div class="cp-icon"><p><img src="${S3}/images/course-details/masteraccess.svg" alt="" /></p></div>\n` +
-            `<div class="planWithBtn"><span>${escapeHtml(typeName)}&nbsp;</span></div>\n` +
+            (!isFree ? `<div class="cp-icon"><p><img src="${S3}/images/course-details/masteraccess.svg" alt="" /></p></div>\n` : '') +
+            planWithBtnHtml +
             `<div class="planPrice" data-fees="${escapeHtml(price)}">${priceDisplay} incl. of all charges</div>\n` +
             (topBtnItems.length ? `<p>\n${topBtnItems.join('\n')}\n</p>\n` : '') +
             `</div>\n` +
             `<div class="planDetails"><div class="ul">\n${descRows}\n</div></div>\n` +
+            freeMaterialsBlock +
             `</div>\n` +
             (bottomBtnItems.length ? `<p>\n${bottomBtnItems.join('\n')}\n</p>\n` : '') +
             `</div>`
