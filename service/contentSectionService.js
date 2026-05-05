@@ -785,32 +785,38 @@ function renderCoursePlan(sectionTypeId, courseId, ds) {
         const btnSignUp   = String(plan.btn_sign_up   ?? '').trim().toUpperCase() === 'Y';
         const btnEnrollNow = String(plan.btn_enroll_now ?? '').trim().toUpperCase() === 'Y';
 
-        const descRows = desc
-            .split(/\n+/)
-            .map((line) => line.trim())
-            .filter(Boolean)
-            .map((line) => `<p>${line}</p>`)
-            .join('\n');
+        // description is raw HTML from the CSV — use it directly
+        const descRows = desc.trim();
 
         const priceDisplay = showPromo
             ? `<span>RS. ${escapeHtml(promoPrice)}</span> <del>RS. ${escapeHtml(price)}</del>`
             : `<span>RS. ${escapeHtml(price)}</span>`;
 
-        const actionBtns = [
-            btnSignUp    ? `<a class="cp-enroll-btn" href="#" id="join-waitlist-btn">Join the waitlist</a>` : '',
-            btnEnrollNow ? `<a class="cp-enroll-btn" href="#" id="enroll-now-btn">Enroll now</a>` : '',
-        ].filter(Boolean).join(' ');
+        const isStandard = cssClass === 'standard';
+
+        // Top buttons (inside planColor) + bottom small buttons — only for the standard plan, always both buttons
+        const topBtnItems = isStandard ? [
+            `<a class="cp-enroll-btn" href="#" id="join-waitlist-btn">Join the waitlist</a>`,
+            `<a class="cp-enroll-btn" href="#" id="enroll-now-btn">Enroll now</a>`,
+        ] : [];
+
+        const bottomBtnItems = isStandard ? [
+            `<a class="cp-enroll-btn cp-enroll-small-btn" href="#" id="join-waitlist-small-btn">Join the waitlist</a>`,
+            `<a class="cp-enroll-btn cp-enroll-small-btn" href="#" id="enroll-now-small-btn">Enroll now</a>`,
+        ] : [];
 
         return (
             `<div class="planBox ${escapeHtml(cssClass)}">\n` +
             `<div>\n` +
             `<div class="planColor">\n` +
+            `<div class="cp-icon"><p><img src="${S3}/images/course-details/masteraccess.svg" alt="" /></p></div>\n` +
             `<div class="planWithBtn"><span>${escapeHtml(typeName)}&nbsp;</span></div>\n` +
             `<div class="planPrice" data-fees="${escapeHtml(price)}">${priceDisplay} incl. of all charges</div>\n` +
+            (topBtnItems.length ? `<p>\n${topBtnItems.join('\n')}\n</p>\n` : '') +
             `</div>\n` +
             `<div class="planDetails"><div class="ul">\n${descRows}\n</div></div>\n` +
             `</div>\n` +
-            (actionBtns ? `<p>${actionBtns}</p>\n` : '') +
+            (bottomBtnItems.length ? `<p>\n${bottomBtnItems.join('\n')}\n</p>\n` : '') +
             `</div>`
         );
     });
