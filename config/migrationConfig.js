@@ -23,6 +23,7 @@ function getMigrationConfig() {
             banner: path.join(ROOT_DIR, 'csv', 'tbl_course_banner.csv'),
             content: path.join(ROOT_DIR, 'content-csv', 'tbl_course_content.csv'),
             courseType: path.join(ROOT_DIR, 'csv', 'tbl_course_type.csv'),
+            courseDownloadFilesMapping: path.join(ROOT_DIR, 'content-csv', 'tbl_course_download_files_mapping.csv'),
         },
         contentCsv: {
             // course section mapping
@@ -75,6 +76,7 @@ function getMigrationConfig() {
         target: {
             baseUrl: getRequiredEnv('BASE_URL'),
             token: getRequiredEnv('TOKEN'),
+            studyMaterialUploadUrl: process.env.STUDY_MATERIAL_UPLOAD_URL || null,
         },
     };
 }

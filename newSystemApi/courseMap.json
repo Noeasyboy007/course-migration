@@ -45,6 +45,8 @@
 
     "use_custom_study_material_template": "false",  // default to false
 
+    "study_material_mapping_ids": [],  // filled at migrate time after study-material upload; default empty
+
     "use_custom_join_waitlist_email_template": "false",  // default to false
 
     "banner_phone": "banner_phone", // tbl_course_banner.banner_phone

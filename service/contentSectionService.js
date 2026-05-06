@@ -394,7 +394,17 @@ function buildCourseContentHtml(courseId, contentRowsById, ds) {
         ? `<div class="cc-layout">\n${sidebarHtml}\n<div class="cc-sidebar-overlay">&nbsp;</div>\n<div class="cc-main">\n${mainHtmlParts.join('\n')}\n</div>\n</div>`
         : '';
 
-    const rawHtml = [ccTopHtml, ccLayoutHtml].filter(Boolean).join('\n');
+        const ccLayoutMobileChrome = mainHtmlParts.length
+        ? `<!-- Overlay (mobile) -->\n<div class="cc-sidebar-overlay" onclick="closeSidebar()"></div>\n
+        <!-- ── Mobile sidebar toggle button ── -->\n<button\nclass="cc-sidebar-toggle"\n
+        id="sidebarTrigger"\naria-label="Open menu"\n>\n<svg\nwidth="25"\nheight="15"\n
+        viewBox="0 0 20 15"\nfill="none"\nxmlns="http://www.w3.org/2000/svg"\n>\n
+        <rect y="0" width="25" height="2" rx="1" fill="#333"></rect>\n
+        <rect y="6.5" width="25" height="2" rx="1" fill="#333"></rect>\n
+        <rect y="13" width="25" height="2" rx="1" fill="#333"></rect>\n</svg>\n</button>`
+        : '';
+
+    const rawHtml = [ccTopHtml, ccLayoutHtml, ccLayoutMobileChrome].filter(Boolean).join('\n');
     return normalizeLawsikhoLinks(resolveVideoModals(stripCssFromHtml(rawHtml)));
 }
 

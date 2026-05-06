@@ -1,0 +1,779 @@
+"id","course_id","file_name_value","status","added_date","modified_date"
+"1","1","Exercise1-Exercise_on _deductions_from_business_income-1571298766.pdf","A","2019-10-17 00:00:00",NULL
+"2","1","Exercise1-Marked_up_assignment_for_deductions_from_business_income-1571298766.pdf","A","2019-10-17 00:00:00",NULL
+"3","1","Exercise1-Reference_Study_Material _- _Deductions_for_business_or_profession_expenditure-1571298766.pdf","A","2019-10-17 00:00:00",NULL
+"4","1","Exercise2-Exercise_on_taxation_of_business_structures_and_angel_tax-1571298766.pdf","A","2019-10-17 00:00:00",NULL
+"5","1","Exercise2-Marked_up_assignment_for_taxation_of_business_structures_and_angel_tax-1571298766.pdf","A","2019-10-17 00:00:00",NULL
+"6","1","Exercise2-Reference_Study_Material_-_1_Introduction_to_Income_tax_for_Business-1571298766.pdf","A","2019-10-17 00:00:00",NULL
+"7","1","Exercise2-Reference_Study_Material_-_2_Tax_rates_for_different_business_structures-1571298766.pdf","A","2019-10-17 00:00:00",NULL
+"8","1","Exercise2-Reference_Study_Material_-_3_Minimum_Alternate_Tax_(MAT)-1571298766.pdf","A","2019-10-17 00:00:00",NULL
+"9","1","Exercise2-Reference_Study_Material_-_4_Tax_on_distribution_of_profits-1571298766.pdf","A","2019-10-17 00:00:00",NULL
+"79","15","How_to_Draft_and_Negotiate_Licensing_and_Franchising_Agreements-1571811218.pdf","A","2019-10-23 00:00:00",NULL
+"80","15","Non_Conventional_Trademarks-Sound,_Smell_and_Colour-1571811218.pdf","A","2019-10-23 00:00:00",NULL
+"81","15","Sample_Exercise-Pre-grant_objection,_cease_and_desist_notice-1571811218.pdf","A","2019-10-23 00:00:00",NULL
+"82","15","Sample-Trademark_License_Agreement-1571811218.pdf","A","2019-10-23 00:00:00",NULL
+"83","15","Step_by_step_Trademark_Registration_In_India-1571811218.pdf","A","2019-10-23 00:00:00",NULL
+"127","24","Report-and-Analysis-on-Types-of-Questions-in-AIBE-1571915851.pdf","A","2019-10-24 00:00:00",NULL
+"128","24","Two-past-years-question-papers-1571915851.pdf","A","2019-10-24 00:00:00",NULL
+"146","27","-What-kind-of-transactions-is-due-diligence-undertaken-for-1573562368.pdf","A","2019-11-12 00:00:00",NULL
+"147","27","-How-to-prepare-a-requisition-list-1573562368.pdf","A","2019-11-12 00:00:00",NULL
+"148","27","-How-to-write-observations-1573562368.pdf","A","2019-11-12 00:00:00",NULL
+"149","27","-Duration-of-a-typical-due-diligence-exercise-1573562368.pdf","A","2019-11-12 00:00:00",NULL
+"150","28","-Does-international-tax-law-apply-to-you-if-you-do-not-have-an-office-offshore-1573566611.pdf","A","2019-11-12 00:00:00",NULL
+"151","28","-Taxation-of-Foreign-Companies-Place-of-Effective-Management-(PoEM)-Rules-1573566611.pdf","A","2019-11-12 00:00:00",NULL
+"152","28","-International-Tax-Structuring-and-Tax-Havens-1573566611.pdf","A","2019-11-12 00:00:00",NULL
+"153","28","-Do-commissionnaire-arrangements-constitute-a-PE-1573566611.pdf","A","2019-11-12 00:00:00",NULL
+"154","28","-When-should-you-approach-Authority-for-Advance-Rulings-(AAR)-1573566611.pdf","A","2019-11-12 00:00:00",NULL
+"155","28","Tax-structuring-How-Google-Microsoft-Apple-other-major-US-tech-giants-save-billions-1573566611.pdf","A","2019-11-12 00:00:00",NULL
+"156","29","-New-Regime-Under-Electricity-Act-1573581853.pdf","A","2019-11-12 00:00:00",NULL
+"157","29","-How-Distribution-and-Trading-Licenses-Work-1573581853.pdf","A","2019-11-12 00:00:00",NULL
+"158","29","-Tariff-Setting-by-SERC,-CERC-and-Generation-Tariffs-1573581853.pdf","A","2019-11-12 00:00:00",NULL
+"159","29","-Fixation-of-Transmission-and-Distribution-Tariffs-1573581853.pdf","A","2019-11-12 00:00:00",NULL
+"160","30","-How-to-Understand-Any-Technology-Contract-and-Course-Outcomes-1573583912.pdf","A","2019-11-13 00:00:00",NULL
+"161","30","-Why-You-Need-A-Checklist-Before-Drafting-Any-Contract-1573583912.pdf","A","2019-11-13 00:00:00",NULL
+"162","30","-Types-of-Software-Licenses-1573583912.pdf","A","2019-11-13 00:00:00",NULL
+"163","30","-Data-Protection-and-Privacy-Law-1573583912.pdf","A","2019-11-13 00:00:00",NULL
+"164","30","-Non-Disclosure-Agreements-1573583912.pdf","A","2019-11-13 00:00:00",NULL
+"165","31","-Import-Procedure-and-Duty-1573592366.pdf","A","2019-11-13 00:00:00",NULL
+"166","31","-Export-regulations-and-procedure-1573592366.pdf","A","2019-11-13 00:00:00",NULL
+"167","31","-Import-Export-Finance-Letters-of-Credit-1573592366.pdf","A","2019-11-13 00:00:00",NULL
+"168","31","-How-and-Why-to-Set-Up-an-SEZ-Unit-1573592366.pdf","A","2019-11-13 00:00:00",NULL
+"169","31","-How-to-restrict-imports-of-products-which-violate-IP-rights-1573592366.pdf","A","2019-11-13 00:00:00",NULL
+"180","32","-How-to-Draft-Terms-of-Use-and-Terms-of-Service-1573635585.pdf","A","2019-11-13 00:00:00",NULL
+"181","32","-Data-Protection-and-Privacy-on-The-Internet-Under-Indian-Law-1573635585.pdf","A","2019-11-13 00:00:00",NULL
+"182","32","-Limitations-and-Workarounds-to-Online-Contracts-Digital-signatures-stamping-and-Aadhaar-based-authentication-1573635585.pdf","A","2019-11-13 00:00:00",NULL
+"183","32","-Bitcoin-and-Cryptocurrencies-1573635585.pdf","A","2019-11-13 00:00:00",NULL
+"184","32","-Online-Banking-Frauds-in-India-1573635585.pdf","A","2019-11-13 00:00:00",NULL
+"185","33","-Introduction-to-Trademark-Law-1573639273.pdf","A","2019-11-13 00:00:00",NULL
+"186","33","-How-and-Why-to-Create-A-Trademark-Strategy-From-Early-On-1573639273.pdf","A","2019-11-13 00:00:00",NULL
+"187","33","-Case-Study-Taj-Hotel-Building-Trademark-1573639273.pdf","A","2019-11-13 00:00:00",NULL
+"188","34","-How-Should-Startups-Implement-Corporate-Governance-Mechanisms-1573669022.pdf","A","2019-11-13 00:00:00",NULL
+"189","34","-Independent-Directors-1573669022.pdf","A","2019-11-13 00:00:00",NULL
+"190","34","-Outsiders-Guide-To-Deal-With-A-Company-1573669022.pdf","A","2019-11-13 00:00:00",NULL
+"191","34","-Related-party-transactions-under-Companies-Act-2013-1573669022.pdf","A","2019-11-13 00:00:00",NULL
+"192","35","Sample-Application-for-Approval-1573671272.pdf","A","2019-11-14 00:00:00",NULL
+"193","35","-Business-structures-and-sectors-in-which-FDI-is-permitted-1573671272.pdf","A","2019-11-14 00:00:00",NULL
+"194","35","-Methods-of-capital-contribution-by-foreign-investors-1573671272.pdf","A","2019-11-14 00:00:00",NULL
+"195","35","-FDI-in-corporate-groups-and-calculation-of-FDI-1573671272.pdf","A","2019-11-14 00:00:00",NULL
+"196","35","-Repatriation-of-income-1573671272.pdf","A","2019-11-14 00:00:00",NULL
+"197","35","-Pricing-documentation,-filing-and-other-compliance-requirements-1573671272.pdf","A","2019-11-14 00:00:00",NULL
+"198","36","-Introduction-to-FCRA-1573673103.pdf","A","2019-11-14 00:00:00",NULL
+"199","36","-Utilisation-of-funds-1573673103.pdf","A","2019-11-14 00:00:00",NULL
+"200","36","-Cancellation-of-Registration-1573673103.pdf","A","2019-11-14 00:00:00",NULL
+"201","36","-FCRA-Penalty-and-Compounding-1573673103.pdf","A","2019-11-14 00:00:00",NULL
+"202","37","-How-Does-Competition-Law-Influence-Business-1573676459.pdf","A","2019-11-14 00:00:00",NULL
+"203","37","-Anti-Competitive-Agreements-An-Overview-1573676459.pdf","A","2019-11-14 00:00:00",NULL
+"204","37","-Defenses-to-an-abuse-of-dominance-proceeding-1573676459.pdf","A","2019-11-14 00:00:00",NULL
+"205","37","-Anti-Competitive-Agreements-Inquiry-and-Procedure-1573676459.pdf","A","2019-11-14 00:00:00",NULL
+"206","37","-Technology-Transfer-Agreements-and-Competition-Law-1573676459.pdf","A","2019-11-14 00:00:00",NULL
+"207","37","-Unique-features-competition-laws-of-China-1573676459.pdf","A","2019-11-14 00:00:00",NULL
+"208","38","-Gambling-Laws-and-how-to-start-a-gambling-business-in-India-1573679123.pdf","A","2019-11-14 00:00:00",NULL
+"209","38","-Table-on-gambling-in-India-1573679123.pdf","A","2019-11-14 00:00:00",NULL
+"210","39","-Negotiation,-mediation-and-conciliation-clauses-and-processes-in-India-1573745183.pdf","A","2019-11-14 00:00:00",NULL
+"211","39","-Statement-of-Claims-and-Statement-of-defense-1573745183.pdf","A","2019-11-14 00:00:00",NULL
+"212","39","-Initiation-of-Arbitration-Proceedings-1573745183.pdf","A","2019-11-14 00:00:00",NULL
+"213","39","-Stages-in-an-institutional-arbitration-proceeding-1573745183.pdf","A","2019-11-14 00:00:00",NULL
+"214","39","-Fast-Track-and-Appellate-Arbitration-1573745183.pdf","A","2019-11-14 00:00:00",NULL
+"215","40","-Introduction-to-patents-1573758575.pdf","A","2019-11-15 00:00:00",NULL
+"216","40","-Copyright-issues-in-cyberspace-1573758575.pdf","A","2019-11-15 00:00:00",NULL
+"217","40","-How-and-Why-to-Create-A-Trademark-Strategy-From-Early-On-1573758575.pdf","A","2019-11-15 00:00:00",NULL
+"218","40","-Introduction-to-Intellectual-Property-1573758575.pdf","A","2019-11-15 00:00:00",NULL
+"219","41","-What-is-Supply-in-GST-1573759777.pdf","A","2019-11-15 00:00:00",NULL
+"220","41","-Failure-to-Register,-Rejection-and-cancellation-of-registration-1573759777.pdf","A","2019-11-15 00:00:00",NULL
+"221","41","-Input-tax-credit-Advanced-concepts-1573759777.pdf","A","2019-11-15 00:00:00",NULL
+"222","41","-Composition-scheme-in-GST-1573759777.pdf","A","2019-11-15 00:00:00",NULL
+"223","41","-Impact-of-GST-on-imports-and-exports-of-goods-and-services-1573759777.pdf","A","2019-11-15 00:00:00",NULL
+"224","42","-Introduction-to-Government-Procurement-1573765614.pdf","A","2019-11-15 00:00:00",NULL
+"225","42","-Common-types-of-contracts-with-the-government-1573765614.pdf","A","2019-11-15 00:00:00",NULL
+"226","42","-Key-terms-in-a-tender-document-1573765614.pdf","A","2019-11-15 00:00:00",NULL
+"227","42","-Anti-Corruption-and-Whistleblowing-1573765614.pdf","A","2019-11-15 00:00:00",NULL
+"229","61","Civil-consequences-for-legal-violations-1574349729.pdf","A","2019-11-21 00:00:00",NULL
+"230","61","How-to-settle-without-court-intervention-1574349729.pdf","A","2019-11-21 00:00:00",NULL
+"231","61","Stages-in-civil-suits-from-plaint-to-decree-1574349729.pdf","A","2019-11-21 00:00:00",NULL
+"232","61","What-is-a-valid-contract-1574349729.pdf","A","2019-11-21 00:00:00",NULL
+"233","61","Where-to-find-laws-legal-records-or-filings-1574349729.pdf","A","2019-11-21 00:00:00",NULL
+"239","67","-How-to-read-really-fast-while-writing-an-exam-1575967969.pdf","A","2019-12-10 00:00:00",NULL
+"240","67","-How-to-answer-legal-reasoning-questions-with-one-principle-1575967969.pdf","A","2019-12-10 00:00:00",NULL
+"241","67","-Tort-Law-Part-1-1575967969.pdf","A","2019-12-10 00:00:00",NULL
+"242","67","-Contract-Part-1-1575967969.pdf","A","2019-12-10 00:00:00",NULL
+"243","67","-THE-CONCEPT-OF-A-CRIME-Part-1-1575967969.pdf","A","2019-12-10 00:00:00",NULL
+"244","69","Report-and-Analysis-on-Types-of-Questions-in-AIBE-1575976919.pdf","A","2019-12-10 00:00:00",NULL
+"245","69","Two-past-years-question-papers-1575976919.pdf","A","2019-12-10 00:00:00",NULL
+"301","26","How to draft a legal notice in a consumer case-1581491684.pdf","A","2020-02-12 00:00:00",NULL
+"302","26","How to draft and file a consumer complaint-1581491712.pdf","A","2020-02-12 00:00:00",NULL
+"303","26","How to draft and file a written statement-1581491741.pdf","A","2020-02-12 00:00:00",NULL
+"304","26","Sample Exercise - How to draft a Notice, Complaint and a Written Statement in a Consumer Matter-1581491755.pdf","A","2020-02-12 00:00:00",NULL
+"305","26","Template - Consumer Complaint-1581491779.pdf","A","2020-02-12 00:00:00",NULL
+"306","26","Template - Legal Notice-1581491809.pdf","A","2020-02-12 00:00:00",NULL
+"307","26","Template - Written Statement-1581491833.pdf","A","2020-02-12 00:00:00",NULL
+"345","75","Basic guidelines for drafting-1586505751.pdf","A","2020-04-10 00:00:00",NULL
+"346","75","Conditions Precedent, Conditions Subsequent and Completion-1586506885.pdf","A","2020-04-10 00:00:00",NULL
+"361","75","Financing Documents-1586596952.pdf","A","2020-04-11 00:00:00",NULL
+"362","75","Template - Term Loan Agreement-1586597223.pdf","A","2020-04-11 00:00:00",NULL
+"363","75","Sample Exercises on Draft a Syndicate Loan Agreement-1586597431.pdf","A","2020-04-11 00:00:00",NULL
+"384","14","Appeal for revival and restoration of companies-1586882178.pdf","A","2020-04-14 00:00:00",NULL
+"385","14","Appeals under Section 58 and application under Section 59-1586882204.pdf","A","2020-04-14 00:00:00",NULL
+"386","14","How to draft a petition for approval of scheme of arrangement and allied matters-1586882271.pdf","A","2020-04-14 00:00:00",NULL
+"387","14","How to draft a petition for oppression and mismanagement-1586882300.pdf","A","2020-04-14 00:00:00",NULL
+"388","14","How to obtain dispensation from conducting of meetings of members and creditors-1586882336.pdf","A","2020-04-14 00:00:00",NULL
+"389","14","Template - Asset Purchase Agreement-1586882368.pdf","A","2020-04-14 00:00:00",NULL
+"390","14","Template - Scheme of Amalgamation-1586882389.pdf","A","2020-04-14 00:00:00",NULL
+"391","14","Sample Exercises on Draft an application on behalf of a financial creditor to initiate insolvency of a company-1586882416.pdf","A","2020-04-14 00:00:00",NULL
+"392","14","Sample Exercises on Identifying avoidable transactions and its consequences-1586882436.pdf","A","2020-04-14 00:00:00",NULL
+"418","3","Compounding of offences-1587048635.pdf","A","2020-04-16 00:00:00",NULL
+"419","3","Examination of an expert witness-1587048655.pdf","A","2020-04-16 00:00:00",NULL
+"420","3","Plea Bargaining and Settlement Procedures-1587048681.pdf","A","2020-04-16 00:00:00",NULL
+"421","3","Procedure for filing a revision-1587048703.pdf","A","2020-04-16 00:00:00",NULL
+"422","3","Stages of Trial-1587048735.pdf","A","2020-04-16 00:00:00",NULL
+"423","3","Template - Draft Criminal Complaint - For the Police Station-1587048754.pdf","A","2020-04-16 00:00:00",NULL
+"424","3","138 complaint-1587048768.pdf","A","2020-04-16 00:00:00",NULL
+"425","3","Sample Exercises on Create a litigation strategy for a high net-worth individual whose relative died due to medical negligence-1587048791.pdf","A","2020-04-16 00:00:00",NULL
+"426","3","Sample Exercises on Draft a revision application to Sessions Court-1587048823.pdf","A","2020-04-16 00:00:00",NULL
+"434","11","Commercial use of Indian National Flag and National Emblems in Media and Branding Activities-1587121375.pdf","A","2020-04-17 00:00:00",NULL
+"435","11","Legal issues around sting operations-1587121408.pdf","A","2020-04-17 00:00:00",NULL
+"436","11","Line Production Agreement-1587121408.pdf","A","2020-04-17 00:00:00",NULL
+"437","11","Music Production Agreement-1587121441.pdf","A","2020-04-17 00:00:00",NULL
+"438","11","Synchronization License Agreement-1587121441.pdf","A","2020-04-17 00:00:00",NULL
+"439","11","Template - Celebrity Endorsement Agreement (India)-1587121476.pdf","A","2020-04-17 00:00:00",NULL
+"440","11","Template - Synchronization license-1587121476.pdf","A","2020-04-17 00:00:00",NULL
+"441","11","Sample Exercises on buying back licensedassigned rights-1587121503.pdf","A","2020-04-17 00:00:00",NULL
+"442","11","Sample Exercises on Showrunner Agreements-1587121503.pdf","A","2020-04-17 00:00:00",NULL
+"443","18","Template - Reply to Show Cause Notice (Front Running Matter)-1587123758.pdf","A","2020-04-17 00:00:00",NULL
+"444","74","Boilerplate clauses in IT Contracts-1587124354.pdf","A","2020-04-17 00:00:00",NULL
+"445","74","Confidentiality in technology-related contracts-1587124399.pdf","A","2020-04-17 00:00:00",NULL
+"446","74","How to deal with takedown notices-1587124440.pdf","A","2020-04-17 00:00:00",NULL
+"447","74","How to raise contractual claims-1587124440.pdf","A","2020-04-17 00:00:00",NULL
+"448","74","How to use online apps such as Docusign to execute documents-1587124440.pdf","A","2020-04-17 00:00:00",NULL
+"449","74","Sample - Terms and Conditions of Sale-1587124480.pdf","A","2020-04-17 00:00:00",NULL
+"450","74","Template - Technology Transfer and License Agreement-1587124480.pdf","A","2020-04-17 00:00:00",NULL
+"451","74","Sample Exercises on Software Development and Technolog Transfer Assignment Agreement-1587124596.pdf","A","2020-04-17 00:00:00",NULL
+"452","74","Sample Exercises on Third Party API & Cancellation, Return and Refund Policy of an E-Commerce Platform-1587124596.pdf","A","2020-04-17 00:00:00",NULL
+"453","18","How to prepare an initial due diligence checklist for an IPO-1587128351.pdf","A","2020-04-17 00:00:00",NULL
+"454","18","How to file an appeal against the order of the Securities Appellate Tribunal-1587128351.pdf","A","2020-04-17 00:00:00",NULL
+"455","18","Changes in board and committee composition on transition-1587128351.pdf","A","2020-04-17 00:00:00",NULL
+"456","18","Template - SAT Appeal-1587130480.pdf","A","2020-04-17 00:00:00",NULL
+"457","18","Sample Exercises on drafting insider trading policy-1587130480.pdf","A","2020-04-17 00:00:00",NULL
+"459","18","Credit Rating and IPO Grading-1587130480.pdf","A","2020-04-17 00:00:00",NULL
+"460","18","How to draft code of fair disclosures and code of conduct-1587130480.pdf","A","2020-04-17 00:00:00",NULL
+"461","20","Power and Hierarchy of Labour Courts_compressed-1587130791.pdf","A","2020-04-17 00:00:00",NULL
+"462","20","Disciplinary Proceedings - misconduct, punishment and termination without inquiry-1587130791.pdf","A","2020-04-17 00:00:00",NULL
+"463","20","Employment agreements-1587130791.pdf","A","2020-04-17 00:00:00",NULL
+"464","20","Checklist of Compliance-Related Actions Under POSH Act-1587130791.pdf","A","2020-04-17 00:00:00",NULL
+"465","20","Template - Appeal challenging the Order passed by Controlling Authority-1587130791.pdf","A","2020-04-17 00:00:00",NULL
+"466","20","Template - Generic, Anti-sexual harassment policy-1587130791.pdf","A","2020-04-17 00:00:00",NULL
+"467","20","How to handle labour violence and unrest-1587130791.pdf","A","2020-04-17 00:00:00",NULL
+"468","20","Sample Exercises on Draft a Whistleblower Policy-1587130791.pdf","A","2020-04-17 00:00:00",NULL
+"470","20","Sample Exercise on Code on Wages, 2019 and Code on Wages (Central) Rules, 2019-1587130791.pdf","A","2020-04-17 00:00:00",NULL
+"471","16","Creating Incentives for Employees Through Stock Options and Sweat Equity Schemes_compressed-1587131319.pdf","A","2020-04-17 00:00:00",NULL
+"472","16","Template - Petition for Oppression and Mismanagement_compressed-1587131319.pdf","A","2020-04-17 00:00:00",NULL
+"474","16","Appeals under Section 58 and application under Section 59-1587131319.pdf","A","2020-04-17 00:00:00",NULL
+"476","16","Template - Managing Director Appointment Agreement-1587131319.pdf","A","2020-04-17 00:00:00",NULL
+"477","16","How to close down a company-1587131319.pdf","A","2020-04-17 00:00:00",NULL
+"478","16","Five must-have systems around corporate governance in litigation-1587131319.pdf","A","2020-04-17 00:00:00",NULL
+"479","16","How to draft a petition for approval of scheme of arrangement and allied matters-1587131319.pdf","A","2020-04-17 00:00:00",NULL
+"480","16","Sample Exercises on Board and Committee Composition and Meetings-1587131319.pdf","A","2020-04-17 00:00:00",NULL
+"481","16","Sample Exercises on Draft Clauses of an ESOP Scheme-1587131319.pdf","A","2020-04-17 00:00:00",NULL
+"506","18","Sample Exercises on Drafting Clauses of an ESOP Scheme-1587194445.pdf","A","2020-04-18 00:00:00",NULL
+"507","7","Angel Tax (Tax on Investments in Startups)-1587202305.pdf","A","2020-04-18 00:00:00",NULL
+"508","7","How is cognizance of offences dealt with in other economic statutes-1587202305.pdf","A","2020-04-18 00:00:00",NULL
+"510","7","Overview of Offences Under GST statutes-1587202305.pdf","A","2020-04-18 00:00:00",NULL
+"511","7","How to deal with search, seizure, confiscation and summons under GST-1587202426.pdf","A","2020-04-18 00:00:00",NULL
+"512","7","Sample Exercises on GST Registration and Compliances-1587202470.pdf","A","2020-04-18 00:00:00",NULL
+"513","7","Sample Exercises on International Taxation and DTAAs-1587202470.pdf","A","2020-04-18 00:00:00",NULL
+"514","7","Template - Debit - Credit Note-1587202470.pdf","A","2020-04-18 00:00:00",NULL
+"515","5","Confidentiality in technology-related contracts-1587204544.pdf","A","2020-04-18 00:00:00",NULL
+"516","5","Drone Rules, 2018-1587204544.pdf","A","2020-04-18 00:00:00",NULL
+"517","5","GDPR A Comprehensive Guide to Ensure Compliance-1587204544.pdf","A","2020-04-18 00:00:00",NULL
+"518","5","How to structure a gaming business in India-1587204544.pdf","A","2020-04-18 00:00:00",NULL
+"519","5","Litigation under Section 25 of the Payment and Settlement Systems Act, 2007-1587204544.pdf","A","2020-04-18 00:00:00",NULL
+"520","5","Sample Exercise on legal actions and strategy against online defamation-1587204544.pdf","A","2020-04-18 00:00:00",NULL
+"521","5","Sample Exercises on Drafting GDPR Compliant Cookie Policies-1587204544.pdf","A","2020-04-18 00:00:00",NULL
+"522","5","Template - Domain Name Transfer-Assignment-Settlement Agreement-1587206298.pdf","A","2020-04-18 00:00:00",NULL
+"523","72","Appeals before NCLAT-1587213653.pdf","A","2020-04-18 00:00:00",NULL
+"524","72","Appreciable adverse effect on competition-1587213653.pdf","A","2020-04-18 00:00:00",NULL
+"526","72","Leniency Regime-1587213653.pdf","A","2020-04-18 00:00:00",NULL
+"527","72","Phase I and Phase II of merger control regime-1587213653.pdf","A","2020-04-18 00:00:00",NULL
+"529","72","Tie In Agreements-1587213653.pdf","A","2020-04-18 00:00:00",NULL
+"530","72","Template - Counter Affidavit filed in NCLAT-1587213695.pdf","A","2020-04-18 00:00:00",NULL
+"531","72","Template - Interim Relief Application-1587213695.pdf","A","2020-04-18 00:00:00",NULL
+"532","72","Sample Exercise on vetting a License Agreement-1587213718.pdf","A","2020-04-18 00:00:00",NULL
+"533","72","Sample Exercises on Target Exemption Test and Parties Test in Merger Control-1587213718.pdf","A","2020-04-18 00:00:00",NULL
+"534","76","Advanced Guidelines for Contract Drafting and Contract Review-1587216863.pdf","A","2020-04-18 00:00:00",NULL
+"535","76","Criminal Appeals, Revision and Miscellaneous Applications-1587216863.pdf","A","2020-04-18 00:00:00",NULL
+"536","76","How to draft Non-Disclosure Agreements-1587216863.pdf","A","2020-04-18 00:00:00",NULL
+"537","76","Pointers for drafting a legal notice and responding to them-1587216863.pdf","A","2020-04-18 00:00:00",NULL
+"538","76","Simple 5 step guide on how to write effective and popular legal articles-1587216863.pdf","A","2020-04-18 00:00:00",NULL
+"539","76","Template - Written Statement with Set Off-1587217074.pdf","A","2020-04-18 00:00:00",NULL
+"540","76","Template - Draft Criminal Complaint - For the Police Station-1587217102.pdf","A","2020-04-18 00:00:00",NULL
+"553","23","How to Deal With Misconduct Fines and Other Disciplinary Consequences Under Standing Orders Act-1587454835.pdf","A","2020-04-21 00:00:00",NULL
+"554","23","How to identify 'workman' for the purpose of the Industrial Disputes Act, 1947-1587454835.pdf","A","2020-04-21 00:00:00",NULL
+"555","23","How to respond to government notices and orders-1587455041.pdf","A","2020-04-21 00:00:00",NULL
+"556","23","Inquiry, Investigation and Decision Making Powers of ICC-1587455041.pdf","A","2020-04-21 00:00:00",NULL
+"557","23","Power and Hierarchy of Labour Courts-1587455099.pdf","A","2020-04-21 00:00:00",NULL
+"558","23","Sample Data Security Policy-1587455139.pdf","A","2020-04-21 00:00:00",NULL
+"559","23","Template Appeal challenging the Order passed by Controlling Authority-1587455139.pdf","A","2020-04-21 00:00:00",NULL
+"560","23","Sample Exercises on Create a process for inspection preparedness for your factory-office-1587455171.pdf","A","2020-04-21 00:00:00",NULL
+"561","13","Does an arbitration clause override the Micro and Small Facilitation Council’s jurisdiction-1587569207.pdf","A","2020-04-22 00:00:00",NULL
+"562","13","How to Draft an Effective Arbitration Clause-1587569207.pdf","A","2020-04-22 00:00:00",NULL
+"563","13","Scope of Court Intervention During Arbitration Proceedings-1587569207.pdf","A","2020-04-22 00:00:00",NULL
+"564","13","Template - Appeal us 37 against interim measure or award-1587569343.pdf","A","2020-04-22 00:00:00",NULL
+"565","13","Template - Application for Interim Measures us 9-1587569343.pdf","A","2020-04-22 00:00:00",NULL
+"566","13","Sample Exercises on Draft a Statement of Claims and Statement of Defense-1587569558.pdf","A","2020-04-22 00:00:00",NULL
+"567","13","Sample Exercises on Draft questions for Cross-Examination and Prepare Final Arguments for an Arbitration-1587569558.pdf","A","2020-04-22 00:00:00",NULL
+"568","13","How to Draft Section 17 Applications-1588141189.pdf","A","2020-04-29 00:00:00",NULL
+"569","7","Arms Length Price and Methods of Calculation-1588146374.pdf","A","2020-04-29 00:00:00",NULL
+"570","12","Hourly Billing versus Fixed Cost - What is Better for a Lawyer-1588162528.pdf","A","2020-04-29 00:00:00",NULL
+"571","12","How can a lawyer use social media and digital presence to build reputation in India-1588162528.pdf","A","2020-04-29 00:00:00",NULL
+"572","12","How to Deal with an Unhappy Client-1588162582.pdf","A","2020-04-29 00:00:00",NULL
+"573","12","How to Identify Practice Areas that are Best-suited for you-1588162582.pdf","A","2020-04-29 00:00:00",NULL
+"574","12","Top 5 things you can do to expand your law practice-1588162660.pdf","A","2020-04-29 00:00:00",NULL
+"575","12","Why is Online Presence Important for Lawyers and Law Firms - What Kind of Online Presence Should You Build-1588162660.pdf","A","2020-04-29 00:00:00",NULL
+"576","12","Sample Exercise on Legal Practice Development and Management-1588162740.pdf","A","2020-04-29 00:00:00",NULL
+"577","12","Sample Exercise on Meaningful Networking and How to Obtain Speaking Slots at Events-1588162740.pdf","A","2020-04-29 00:00:00",NULL
+"578","10","How to choose between winding up and liquidation-1588241976.pdf","A","2020-04-30 00:00:00",NULL
+"579","10","Initiation of insolvency proceedings by homebuyers-1588241976.pdf","A","2020-04-30 00:00:00",NULL
+"580","10","Is there a code of conduct applicable to Insolvency Professionals-1588242133.pdf","A","2020-04-30 00:00:00",NULL
+"581","10","Strategic insights with respect to insolvency proceedings against personal guarantor-1588242133.pdf","A","2020-04-30 00:00:00",NULL
+"582","10","Template - Application by financial creditor to initiate corporate IRP-1588242188.pdf","A","2020-04-30 00:00:00",NULL
+"583","10","Template - Application for initiation of CIRP under Section 9-1588242188.pdf","A","2020-04-30 00:00:00",NULL
+"584","10","Sample Exercises on Draft an application on behalf of a financial creditor to initiate insolvency of a company-1588242432.pdf","A","2020-04-30 00:00:00",NULL
+"585","10","Sample Exercises on Identifying Avoidable Transactions and its Consequences-1588242432.pdf","A","2020-04-30 00:00:00",NULL
+"586","76","Sample Exercises on How to draft a reply to notice-1588255274.pdf","A","2020-04-30 00:00:00",NULL
+"587","76","Sample Exercises on Drafting an MOU-1588255870.pdf","A","2020-04-30 00:00:00",NULL
+"588","62","Cloud computing and the law-1588668813.pdf","A","2020-05-05 00:00:00",NULL
+"589","62","Governing Law, Jurisdiction, Dispute Resolution and Arbitration-1588668813.pdf","A","2020-05-05 00:00:00",NULL
+"590","62","How to negotiate commercial leases-1588668933.pdf","A","2020-05-05 00:00:00",NULL
+"591","62","Legal requirements for validity and enforcement-1588668933.pdf","A","2020-05-05 00:00:00",NULL
+"592","62","Shareholders Agreements-1588669016.pdf","A","2020-05-05 00:00:00",NULL
+"593","62","Template - TradeMark Assignment Agreement-1588669062.pdf","A","2020-05-05 00:00:00",NULL
+"594","62","Sample Exercise on Drafting a Loan Agreement-1588669115.pdf","A","2020-05-05 00:00:00",NULL
+"615","91","Introduction to Parts of a Contract-1594286944.pdf","A","2020-07-09 00:00:00",NULL
+"616","91","Roadmap for learning contract drafting skills-1594286962.pdf","A","2020-07-09 00:00:00",NULL
+"617","91","The Definitive Contract Checklist-1594286978.pdf","A","2020-07-09 00:00:00",NULL
+"618","91","Template - Memorandum Of Understanding (MOU)-1594286998.pdf","A","2020-07-09 00:00:00",NULL
+"619","91","Sample Exercises on Drafting a Memorandum of Understanding-1594287054.pdf","A","2020-07-09 00:00:00",NULL
+"620","92","Concept of appreciable adverse effect on competition in combinations-1594398473.pdf","A","2020-07-10 00:00:00",NULL
+"621","92","FDI in single brand, multi-brand retail and e-commerce-1594398487.pdf","A","2020-07-10 00:00:00",NULL
+"622","92","Financing Documents-1594398500.pdf","A","2020-07-10 00:00:00",NULL
+"623","92","How to draft a business transfer agreement-1594398516.pdf","A","2020-07-10 00:00:00",NULL
+"624","92","Steps in due diligence for Merger and Acquisition transaction-1594398531.pdf","A","2020-07-10 00:00:00",NULL
+"625","92","Template - Share Purchase Agreement-1594398551.pdf","A","2020-07-10 00:00:00",NULL
+"626","92","Types of Securities - 1 (Equity, Debt and Hybrid Instruments)-1594398568.pdf","A","2020-07-10 00:00:00",NULL
+"627","92","Types of Securities - 2 (Preference Shares & Debentures)-1594398583.pdf","A","2020-07-10 00:00:00",NULL
+"645","94","Copyright infringement and practical remedies-1595492724.pdf","A","2020-07-23 00:00:00",NULL
+"646","94","Patent specification and claims-1595492724.pdf","A","2020-07-23 00:00:00",NULL
+"647","94","The CBFC process and Disputes in Films and OTT Platforms-1595492724.pdf","A","2020-07-23 00:00:00",NULL
+"648","94","Step-by-step Trademark Prosecution-1595492841.pdf","A","2020-07-23 00:00:00",NULL
+"649","94","Sample Exercises on trademark classification, search and drafting a reply to the objection report-1595492841.pdf","A","2020-07-23 00:00:00",NULL
+"657","90","CLAT Sample paper 3-1595497908.pdf","A","2020-07-23 00:00:00",NULL
+"658","71","Reputational hazards and anti-sexual harassment compliance – lessons from the Tehelka case study-1595590278.pdf","A","2020-07-24 00:00:00",NULL
+"659","71","How Uber’s regulatory soup points to new career opportunities-1595590278.pdf","A","2020-07-24 00:00:00",NULL
+"660","71","Sexual Harassment at the Workplace in the Age of  “Me Too”-1595590278.pdf","A","2020-07-24 00:00:00",NULL
+"661","71","Principles of Natural Justice for Disciplinary Inquiries (POSH Act)-1595590278.pdf","A","2020-07-24 00:00:00",NULL
+"662","71","Role of men in anti-sexual harassment compliance-1595590278.pdf","A","2020-07-24 00:00:00",NULL
+"663","71","How should false complaints be handled A 4 - step guide for the organization and the ICC to minimize risk and legal abuse-1595590278.pdf","A","2020-07-24 00:00:00",NULL
+"664","71","What to do if a false complaint is filed against you-1595590278.pdf","A","2020-07-24 00:00:00",NULL
+"665","71","Template 1 - Notice under Rule 7(5) to accussed-1578489020-1595590278.pdf","A","2020-07-24 00:00:00",NULL
+"666","71","Template 2 - Record of Examination of Witness-1578489020-1595590278.pdf","A","2020-07-24 00:00:00",NULL
+"667","71","Template 3 - Interim Decision-1578489020-1595590278.pdf","A","2020-07-24 00:00:00",NULL
+"668","71","Sample Exercise_POSH Certificate Course-1595590278.pdf","A","2020-07-24 00:00:00",NULL
+"669","90","Sample paper Analysis-1596207484.pdf","A","2020-07-31 00:00:00",NULL
+"670","89","Introduction to Capital Markets-1597306232.pdf","A","2020-08-13 00:00:00",NULL
+"671","89","Preamble to the Indian Constitution-1597306232.pdf","A","2020-08-13 00:00:00",NULL
+"672","89","Stay of Suit-1597306232.pdf","A","2020-08-13 00:00:00",NULL
+"673","89","Newsletter 20 - 25 July 2020-1597306232.pdf","A","2020-08-13 00:00:00",NULL
+"674","89","Indian Evidence Act Model Note Presumptions-1597306232.pdf","A","2020-08-13 00:00:00",NULL
+"675","89","Important concepts under the Companies Act, 2013-1597306232.pdf","A","2020-08-13 00:00:00",NULL
+"676","89","Weekly Newsletter-1597306232.pdf","A","2020-08-13 00:00:00",NULL
+"677","89","Practice Test - 1-1597306232.pdf","A","2020-08-13 00:00:00",NULL
+"678","97","Stay of Suit-1597822967.pdf","A","2020-08-19 00:00:00",NULL
+"679","97","Video - Concept session on Return and Rejection of Plaint-1597822967.pdf","A","2020-08-19 00:00:00",NULL
+"680","97","Video - Order IX-1597822967.pdf","A","2020-08-19 00:00:00",NULL
+"681","93","Simple 5 step guide on how to write effective and popular legal articles-1597936403.pdf","A","2020-08-20 00:00:00",NULL
+"682","93","Guide to writing blog posts-1597936403.pdf","A","2020-08-20 00:00:00",NULL
+"683","93","Links to Free Video-1598016127.pdf","A","2020-08-21 00:00:00",NULL
+"684","91","Link to free video on Contract Drafting Checklist-1598016897.pdf","A","2020-08-21 00:00:00",NULL
+"686","101","Patent examination process-1599813750.pdf","A","2020-09-11 00:00:00",NULL
+"687","101","Template - Draft of Patent Opposition Application-1599813750.pdf","A","2020-09-11 00:00:00",NULL
+"688","101","Licensing in Patents-1599813750.pdf","A","2020-09-11 00:00:00",NULL
+"689","101","Sample Exercises on filing a suit for infringement of patents and preparing a defence strategy against an infringement suit-1599813750.pdf","A","2020-09-11 00:00:00",NULL
+"690","101","International Patent Application Through the Patent cooperation treaty-1599813750.pdf","A","2020-09-11 00:00:00",NULL
+"691","98","Authority for Advance Ruling GST-1599816217.pdf","A","2020-09-11 00:00:00",NULL
+"692","98","Sample Exercises on Advance Authority of Ruling, Anti Profiteering and Writ Petitions under the GST Law-1599816217.pdf","A","2020-09-11 00:00:00",NULL
+"693","102","A General Overview of the Sale of Goods Act-1600167895.pdf","A","2020-09-15 00:00:00",NULL
+"694","102","Average-1600167895.pdf","A","2020-09-15 00:00:00",NULL
+"695","102","Nature and Definition of International Law-1600167895.pdf","A","2020-09-15 00:00:00",NULL
+"696","102","Nature and Definition of Torts-1600167896.pdf","A","2020-09-15 00:00:00",NULL
+"697","102","Practice Test 1-1600167896.pdf","A","2020-09-15 00:00:00",NULL
+"698","102","Preamble to the Indian Constitution-1600167896.pdf","A","2020-09-15 00:00:00",NULL
+"699","104","Cease and desist notice for trademark infringement-1602141515.pdf","A","2020-10-08 00:00:00",NULL
+"700","104","International Patent Application Through the Patent Cooperation Treaty-1602141515.pdf","A","2020-10-08 00:00:00",NULL
+"701","104","Procedure for copyright registration-1602141515.pdf","A","2020-10-08 00:00:00",NULL
+"702","104","What is the role of Copyright societies-1602141515.pdf","A","2020-10-08 00:00:00",NULL
+"703","104","Template - Affidavit under Rule - 45 of trademark rules-1602141540.pdf","A","2020-10-08 00:00:00",NULL
+"704","104","Sample Exercises on Drafting a cease and desist notice and drafting a response to a cease and desist notice-1602141560.pdf","A","2020-10-08 00:00:00",NULL
+"705","11","Content regulation for OTT Platforms-1602162085.pdf","A","2020-10-08 00:00:00",NULL
+"709","120","How to draft an SLP-1611051233.pdf","A","2021-01-19 00:00:00",NULL
+"710","120","All about Special Leave Petitions-1611051257.pdf","A","2021-01-19 00:00:00",NULL
+"711","120","Sample Exercises on Drafting a Special Leave Petition - Civil-1611051257.pdf","A","2021-01-19 00:00:00",NULL
+"712","121","3-Assignment-and-Change-of-Control-Clauses-1571471180-1597324621-1611639668.pdf","A","2021-01-26 00:00:00",NULL
+"713","121","0380044-1596547240-1611639793.PDF","A","2021-01-26 00:00:00",NULL
+"714","121","API- Lawsikho-1598248369-1611639793.pdf","A","2021-01-26 00:00:00",NULL
+"716","99","03800441596552070-copy-1612932697.PDF","A","2021-02-10 00:00:00",NULL
+"717","99","testpdfthree-small-size-copy-1612932697.pdf","A","2021-02-10 00:00:00",NULL
+"718","99","testpdfsixmidsize-copy-1612932928.pdf","A","2021-02-10 00:00:00",NULL
+"719","122","a-focus-on-the-journey-of-the-automotive-industry-1614067922.pdf","A","2021-02-23 00:00:00",NULL
+"720","122","introduction-to-international-conflict-management-1614067924.pdf","A","2021-02-23 00:00:00",NULL
+"721","122","modes-of-entry-used-by-foreign-companies-1614067925.pdf","A","2021-02-23 00:00:00",NULL
+"722","123","preamble-to-the-indian-constitution-1614170094.pdf","A","2021-02-24 00:00:00",NULL
+"723","123","video--demo-class-on-kidnapping-and-abduction-1614170095.pdf","A","2021-02-24 00:00:00",NULL
+"724","123","current-affair-quiz-sample-for-2nd-week-of-february-1614171638.pdf","A","2021-02-24 00:00:00",NULL
+"725","123","latest-case-law-written-excerpt-sample-for-1st-week-of-january-1614171639.pdf","A","2021-02-24 00:00:00",NULL
+"726","99","ebookhowtoqualifyintheukasanindianlawyer-1615443297.pdf","A","2021-03-11 00:00:00",NULL
+"727","121","testpdfthree-small-size-copy-1616134153.pdf","A","2021-03-19 00:00:00",NULL
+"728","103","decision-making-forums-in-a-company--board-meetings-1616484093.pdf","A","2021-03-23 00:00:00",NULL
+"729","103","types-of-securities-1616484094.pdf","A","2021-03-23 00:00:00",NULL
+"730","103","why-do-people-incorporate-companies-strategic-considerations-and-comparison-with-other-business-structures-1616484095.pdf","A","2021-03-23 00:00:00",NULL
+"731","103","sample-exercises-on-intercorporate-investments-and-compliance-with-respect-to-charges-1616484096.pdf","A","2021-03-23 00:00:00",NULL
+"741","126","exercises-on-work-made-for-hire-agreement-and-inventor's-agreement-1617875809.pdf","A","2021-04-08 00:00:00",NULL
+"742","126","sample-notice-of-opposition-us-1617875810.pdf","A","2021-04-08 00:00:00",NULL
+"743","126","trademark-opposition-in-the-us-1617875811.pdf","A","2021-04-08 00:00:00",NULL
+"744","126","how-to-draft-a-privacy-policy-for-a-website-1617875812.pdf","A","2021-04-08 00:00:00",NULL
+"745","133","article-12-of-the-indian-constitution-definition-of-state-1621415065.pdf","A","2021-05-19 00:00:00",NULL
+"746","133","historical-background-and-introduction-1621415065.pdf","A","2021-05-19 00:00:00",NULL
+"747","133","nature-and-definition-of-torts-1621415065.pdf","A","2021-05-19 00:00:00",NULL
+"748","133","presumption-as-to-paternity-of-child-1621415065.pdf","A","2021-05-19 00:00:00",NULL
+"749","133","-state-of-haryana-1621415065.pdf","A","2021-05-19 00:00:00",NULL
+"752","135","how-to-handle-a-data-breachcompressed-1628096224.pdf","A","2021-08-04 00:00:00",NULL
+"753","135","how-to-build-a-gdpr-implementation-plancompressed-1628096224.pdf","A","2021-08-04 00:00:00",NULL
+"754","99","abhisheks-resume-2-1633064516.pdf","A","2021-10-01 00:00:00",NULL
+"755","160","research-methodologies-for-a-publication-1634553701.pdf","A","2021-10-18 00:00:00",NULL
+"756","160","winning-sops-1634553701.pdf","A","2021-10-18 00:00:00",NULL
+"772","148","how-to-prepare-an-initial-due-diligence-checklist-for-an-ipo-1634561778.pdf","A","2021-10-18 00:00:00",NULL
+"773","148","how-to-raise-capital-through-qip-and-draft-a-placement-document-1634561779.pdf","A","2021-10-18 00:00:00",NULL
+"774","148","debt-securities-and-regulations-applicable-to-debt-securities-1634561780.pdf","A","2021-10-18 00:00:00",NULL
+"775","147","international-aspects-of-competition-law-for-businesses-1634562288.pdf","A","2021-10-18 00:00:00",NULL
+"776","147","introduction-to-competition-law-1634562289.pdf","A","2021-10-18 00:00:00",NULL
+"777","147","institutional-framework-of-merger-control-regime-of-india-1634562290.pdf","A","2021-10-18 00:00:00",NULL
+"789","154","rules-and-exceptions-of-pleadings-1634646890.pdf","A","2021-10-19 00:00:00",NULL
+"790","154","waiver-variation-and-severability-clauses-1634646891.pdf","A","2021-10-19 00:00:00",NULL
+"791","154","pleadings--an-overview-of-the-us-legal-system-1634646891.pdf","A","2021-10-19 00:00:00",NULL
+"840","168","anticipated-breach-of-contract-1637923164.pdf","A","2021-11-26 00:00:00",NULL
+"841","168","article-14-right-to-equality-1637923164.pdf","A","2021-11-26 00:00:00",NULL
+"842","168","constitute-a-valid-contract-1637923166.pdf","A","2021-11-26 00:00:00",NULL
+"843","168","main-features-of-the-indian-constitution-1637923167.pdf","A","2021-11-26 00:00:00",NULL
+"844","168","voluntary-consent-1637923168.pdf","A","2021-11-26 00:00:00",NULL
+"845","65","examination-of-an-expert-witness-1639640497.pdf","A","2021-12-16 00:00:00",NULL
+"846","65","plea-bargaining-and-settlement-procedures-1639640498.pdf","A","2021-12-16 00:00:00",NULL
+"847","65","procedure-for-filing-a-revision--1639640498.pdf","A","2021-12-16 00:00:00",NULL
+"848","65","compounding-of-offences-1639640499.pdf","A","2021-12-16 00:00:00",NULL
+"849","65","stages-of-trial-1639640565.pdf","A","2021-12-16 00:00:00",NULL
+"850","65","template--draft-criminal-complaint--for-the-police-station-1639640566.pdf","A","2021-12-16 00:00:00",NULL
+"851","65","138-complaint-1639640567.pdf","A","2021-12-16 00:00:00",NULL
+"852","65","sample-exercises-on-draft-a-revision-application-to-sessions-court-1639640568.pdf","A","2021-12-16 00:00:00",NULL
+"853","65","sample-exercises-on-create-a-litigation-strategy-for-a-high-networth-individual-whose-relative-died-due-to-medical-negligence-1639640605.pdf","A","2021-12-16 00:00:00",NULL
+"854","65","pointers-for-drafting-a-written-statement-1639640687.pdf","A","2021-12-16 00:00:00",NULL
+"855","65","preparation-for-crossexamination-1639640688.pdf","A","2021-12-16 00:00:00",NULL
+"856","65","preparing-a-case-litigation-strategy-1639640689.pdf","A","2021-12-16 00:00:00",NULL
+"857","65","stages-in-a-civil-case-1639640690.pdf","A","2021-12-16 00:00:00",NULL
+"858","65","drafting-of-rti-application-1639640691.pdf","A","2021-12-16 00:00:00",NULL
+"859","65","sample-exercises-on-how-to-draft-a-temporary-injunction-and-counterclaim-1639640719.pdf","A","2021-12-16 00:00:00",NULL
+"860","65","section-138-litigation-under-negotiable--instruments-act-1639640719.pdf","A","2021-12-16 00:00:00",NULL
+"861","65","template--first-appeal-1639640720.pdf","A","2021-12-16 00:00:00",NULL
+"862","65","template--reply-to-consumer-complaint-1639640721.pdf","A","2021-12-16 00:00:00",NULL
+"863","65","how-to-draft-an-effective-arbitration-clause-1639640921.pdf","A","2021-12-16 00:00:00",NULL
+"864","65","how-to-draft-section-17-applications-1639640922.pdf","A","2021-12-16 00:00:00",NULL
+"865","65","scope-of-court-intervention-during-arbitration-proceedings-1639640923.pdf","A","2021-12-16 00:00:00",NULL
+"866","65","does-an-arbitration-clause-override-the-micro-and-small-facilitation-councils-jurisdiction-1639640924.pdf","A","2021-12-16 00:00:00",NULL
+"867","65","sample-exercises-on-draft-a-statement-of-claims-and-statement-of-defense-1639640958.pdf","A","2021-12-16 00:00:00",NULL
+"868","65","sample-exercises-on-draft-questions-for-crossexamination-and-prepare-final-arguments-for-an-arbitration-1639640959.pdf","A","2021-12-16 00:00:00",NULL
+"869","65","template--appeal-us-37-against-interim-measure-or-award-1639640960.pdf","A","2021-12-16 00:00:00",NULL
+"870","65","template--application-for-interim-measures-us-9-1639640961.pdf","A","2021-12-16 00:00:00",NULL
+"871","65","how-to-select-an-appropriate--institution-for-international-commercial-arbitrationcompressed1605596660-1639641032.pdf","A","2021-12-16 00:00:00",NULL
+"872","65","international-commercial-arbitration--introduction1605596660-1639641032.pdf","A","2021-12-16 00:00:00",NULL
+"873","65","arbitral-clauses-in-international-commercial-arbitrationcompressed1605596660-1639641033.pdf","A","2021-12-16 00:00:00",NULL
+"874","79","advanced-issues-in-cloud-computing-agreements-1639645036.pdf","A","2021-12-16 00:00:00",NULL
+"875","79","anatomy-of-a-contract--introduction-to-parts-of-a-contract-1639645036.pdf","A","2021-12-16 00:00:00",NULL
+"876","79","basic-guidelines-for-drafting-1639645037.pdf","A","2021-12-16 00:00:00",NULL
+"877","79","common-negotiation-techniques-and-pitfalls-1639645038.pdf","A","2021-12-16 00:00:00",NULL
+"878","79","advanced-guidelines-for-contract-drafting-and-contract-review-1639645039.pdf","A","2021-12-16 00:00:00",NULL
+"879","79","how-to-draft-terms-of-use--terms-of-service-1639645131.pdf","A","2021-12-16 00:00:00",NULL
+"880","79","legal-requirements-for-validity-and-enforcement-1639645132.pdf","A","2021-12-16 00:00:00",NULL
+"881","79","title-recitals-definitions-and-interpretation-clauses-1639645133.pdf","A","2021-12-16 00:00:00",NULL
+"882","79","general-principles-of-contract-law-1639645134.pdf","A","2021-12-16 00:00:00",NULL
+"883","79","sample-exercises--draft-a-share-pledge-agreement-1639645157.pdf","A","2021-12-16 00:00:00",NULL
+"884","79","template--business-transfer-agreementcompressed-1639645158.pdf","A","2021-12-16 00:00:00",NULL
+"885","79","docx-1639645159.pdf","A","2021-12-16 00:00:00",NULL
+"886","79","template--consulting-services-agreement-1639645160.pdf","A","2021-12-16 00:00:00",NULL
+"887","79","docx-1639645160.pdf","A","2021-12-16 00:00:00",NULL
+"888","79","sample-exercise--draft-software-development-agreement-and-terms-of-use-for-a-website-1639645231.pdf","A","2021-12-16 00:00:00",NULL
+"889","79","contract-enforcement-in-the-us-1639645268.pdf","A","2021-12-16 00:00:00",NULL
+"890","79","incorporating-a-legal-entity-in-singapore--its-corporate-governance-1639645269.pdf","A","2021-12-16 00:00:00",NULL
+"891","79","a-primer-on-different-stages-in-an-investment-transaction-1639645313.pdf","A","2021-12-16 00:00:00",NULL
+"892","79","a-primer-on-tax-aspects-related-to-ma-transactions-1639645314.pdf","A","2021-12-16 00:00:00",NULL
+"893","79","all-you-need-to-know-about-term-sheets-1639645315.pdf","A","2021-12-16 00:00:00",NULL
+"894","79","an-overview-of-fdi-regulations-1639645316.pdf","A","2021-12-16 00:00:00",NULL
+"895","79","a-guide-to-write-observations-in-a-due-diligence-report-1639645317.pdf","A","2021-12-16 00:00:00",NULL
+"896","79","five-essential-ingredients-of-an-open-offer-1639645343.pdf","A","2021-12-16 00:00:00",NULL
+"897","79","foreign-portfolio-investments-1639645343.pdf","A","2021-12-16 00:00:00",NULL
+"898","79","founderinvestor-conflicts-and-corporate-governance-lessons-from-flipkart-snapdeal-ola-and-softbank-1639645344.pdf","A","2021-12-16 00:00:00",NULL
+"899","79","different-modes-of-investment-for-startups-1639645345.pdf","A","2021-12-16 00:00:00",NULL
+"900","79","fdi-in-single-brand-multibrand-retail-and-ecommerce-1639645346.pdf","A","2021-12-16 00:00:00",NULL
+"901","79","key-terms-of-the-merger-control-regime-1639645407.pdf","A","2021-12-16 00:00:00",NULL
+"902","79","overview-of-stamp-duty-in-mergers-and-acquisitions-1639645408.pdf","A","2021-12-16 00:00:00",NULL
+"903","79","shareholders-agreements--1639645409.pdf","A","2021-12-16 00:00:00",NULL
+"904","79","the-lifecycle-of-a-combination-before-the-cci-1639645410.pdf","A","2021-12-16 00:00:00",NULL
+"905","79","how-to-open-a-branch-office-project-office-or-liaison-office-in-india-1639645411.pdf","A","2021-12-16 00:00:00",NULL
+"906","79","sample-exercise-draft-a-syndicate-loan-agreement-1639645664.pdf","A","2021-12-16 00:00:00",NULL
+"907","79","sample-exercises-drafting-business-transfer-agreement-1639645665.pdf","A","2021-12-16 00:00:00",NULL
+"908","79","sample-termsheet-1639645665.pdf","A","2021-12-16 00:00:00",NULL
+"909","79","template--due-diligence-report-1639645665.pdf","A","2021-12-16 00:00:00",NULL
+"910","79","template--requisition-list-1639645696.pdf","A","2021-12-16 00:00:00",NULL
+"911","79","how-to-select-an-appropriate--institution-for-international-commercial-arbitrationcompressed1605596660-1639645767.pdf","A","2021-12-16 00:00:00",NULL
+"912","79","international-commercial-arbitration--introduction1605596660-1639645767.pdf","A","2021-12-16 00:00:00",NULL
+"913","79","arbitral-clauses-in-international-commercial-arbitrationcompressed1605596660-1639645768.pdf","A","2021-12-16 00:00:00",NULL
+"914","79","howtodraftaprivacypolicyforawebsite1617875812-1639645848.pdf","A","2021-12-16 00:00:00",NULL
+"915","79","samplenoticeofoppositionus1617875810-1639645848.pdf","A","2021-12-16 00:00:00",NULL
+"916","79","trademarkoppositionintheus1617875811-1639645848.pdf","A","2021-12-16 00:00:00",NULL
+"917","79","exercisesonworkmadeforhireagreementandinventorsagreement1617875809-1639645849.pdf","A","2021-12-16 00:00:00",NULL
+"918","108","howtodraftaprivacypolicyforawebsite1617875812-1639646228.pdf","A","2021-12-16 00:00:00",NULL
+"919","108","samplenoticeofoppositionus1617875810-1639646228.pdf","A","2021-12-16 00:00:00",NULL
+"920","108","trademarkoppositionintheus1617875811-1639646228.pdf","A","2021-12-16 00:00:00",NULL
+"921","108","exercisesonworkmadeforhireagreementandinventorsagreement1617875809-1639646228.pdf","A","2021-12-16 00:00:00",NULL
+"922","108","advanced-guidelines-for-contract-drafting-and-contract-review-1639646279.pdf","A","2021-12-16 00:00:00",NULL
+"923","108","advanced-issues-in-cloud-computing-agreements-1639646279.pdf","A","2021-12-16 00:00:00",NULL
+"924","108","anatomy-of-a-contract--introduction-to-parts-of-a-contract-1639646279.pdf","A","2021-12-16 00:00:00",NULL
+"925","108","basic-guidelines-for-drafting-1639646279.pdf","A","2021-12-16 00:00:00",NULL
+"926","108","common-negotiation-techniques-and-pitfalls-1639646279.pdf","A","2021-12-16 00:00:00",NULL
+"927","108","general-principles-of-contract-law-1639646319.pdf","A","2021-12-16 00:00:00",NULL
+"928","108","how-to-draft-terms-of-use--terms-of-service-1639646319.pdf","A","2021-12-16 00:00:00",NULL
+"929","108","legal-requirements-for-validity-and-enforcement-1639646319.pdf","A","2021-12-16 00:00:00",NULL
+"930","108","docx-1639646319.pdf","A","2021-12-16 00:00:00",NULL
+"931","108","title-recitals-definitions-and-interpretation-clauses-1639646320.pdf","A","2021-12-16 00:00:00",NULL
+"932","108","sample-exercise--draft-software-development-agreement-and-terms-of-use-for-a-website-1639646352.pdf","A","2021-12-16 00:00:00",NULL
+"933","108","sample-exercises--draft-a-share-pledge-agreement-1639646353.pdf","A","2021-12-16 00:00:00",NULL
+"934","108","template--business-transfer-agreementcompressed-1639646353.pdf","A","2021-12-16 00:00:00",NULL
+"935","108","docx-1639646353.pdf","A","2021-12-16 00:00:00",NULL
+"936","108","template--consulting-services-agreement-1639646354.pdf","A","2021-12-16 00:00:00",NULL
+"937","108","contract-enforcement-in-the-us-1639646428.pdf","A","2021-12-16 00:00:00",NULL
+"938","108","incorporating-a-legal-entity-in-singapore--its-corporate-governance-1639646428.pdf","A","2021-12-16 00:00:00",NULL
+"939","108","a-guide-to-write-observations-in-a-due-diligence-report-1639647021.pdf","A","2021-12-16 00:00:00",NULL
+"940","108","a-primer-on-different-stages-in-an-investment-transaction-1639647022.pdf","A","2021-12-16 00:00:00",NULL
+"941","108","a-primer-on-tax-aspects-related-to-ma-transactions-1639647022.pdf","A","2021-12-16 00:00:00",NULL
+"942","108","all-you-need-to-know-about-term-sheets-1639647022.pdf","A","2021-12-16 00:00:00",NULL
+"943","108","an-overview-of-fdi-regulations-1639647022.pdf","A","2021-12-16 00:00:00",NULL
+"944","108","different-modes-of-investment-for-startups-1639647022.pdf","A","2021-12-16 00:00:00",NULL
+"945","108","fdi-in-single-brand-multibrand-retail-and-ecommerce-1639647044.pdf","A","2021-12-16 00:00:00",NULL
+"946","108","five-essential-ingredients-of-an-open-offer-1639647044.pdf","A","2021-12-16 00:00:00",NULL
+"947","108","foreign-portfolio-investments-1639647044.pdf","A","2021-12-16 00:00:00",NULL
+"948","108","founderinvestor-conflicts-and-corporate-governance-lessons-from-flipkart-snapdeal-ola-and-softbank-1639647044.pdf","A","2021-12-16 00:00:00",NULL
+"949","108","how-to-open-a-branch-office-project-office-or-liaison-office-in-india-1639647044.pdf","A","2021-12-16 00:00:00",NULL
+"950","108","key-terms-of-the-merger-control-regime-1639647045.pdf","A","2021-12-16 00:00:00",NULL
+"951","108","overview-of-stamp-duty-in-mergers-and-acquisitions-1639647094.pdf","A","2021-12-16 00:00:00",NULL
+"952","108","sample-termsheet-1639647094.pdf","A","2021-12-16 00:00:00",NULL
+"953","108","shareholders-agreements--1639647094.pdf","A","2021-12-16 00:00:00",NULL
+"954","108","template--due-diligence-report-1639647094.pdf","A","2021-12-16 00:00:00",NULL
+"955","108","template--requisition-list-1639647094.pdf","A","2021-12-16 00:00:00",NULL
+"956","108","the-lifecycle-of-a-combination-before-the-cci-1639647094.pdf","A","2021-12-16 00:00:00",NULL
+"957","108","sample-exercise-draft-a-syndicate-loan-agreement-1639647112.pdf","A","2021-12-16 00:00:00",NULL
+"958","108","sample-exercises-drafting-business-transfer-agreement-1639647112.pdf","A","2021-12-16 00:00:00",NULL
+"959","108","how-to-select-an-appropriate--institution-for-international-commercial-arbitrationcompressed1605596660-1639647203.pdf","A","2021-12-16 00:00:00",NULL
+"960","108","international-commercial-arbitration--introduction1605596660-1639647203.pdf","A","2021-12-16 00:00:00",NULL
+"961","108","arbitral-clauses-in-international-commercial-arbitrationcompressed1605596660-1639647203.pdf","A","2021-12-16 00:00:00",NULL
+"962","64","all-you-need-to-know-about-term-sheets-1639647826.pdf","A","2021-12-16 00:00:00",NULL
+"963","64","an-overview-of-fdi-regulations-1639647827.pdf","A","2021-12-16 00:00:00",NULL
+"964","64","different-modes-of-investment-for-startups-1639647827.pdf","A","2021-12-16 00:00:00",NULL
+"965","64","a-guide-to-write-observations-in-a-due-diligence-report-1639647827.pdf","A","2021-12-16 00:00:00",NULL
+"966","64","a-primer-on-different-stages-in-an-investment-transaction-1639647828.pdf","A","2021-12-16 00:00:00",NULL
+"967","64","a-primer-on-tax-aspects-related-to-ma-transactions-1639647828.pdf","A","2021-12-16 00:00:00",NULL
+"968","64","fdi-in-single-brand-multibrand-retail-and-ecommerce-1639647849.pdf","A","2021-12-16 00:00:00",NULL
+"969","64","five-essential-ingredients-of-an-open-offer-1639647849.pdf","A","2021-12-16 00:00:00",NULL
+"970","64","foreign-portfolio-investments-1639647849.pdf","A","2021-12-16 00:00:00",NULL
+"971","64","founderinvestor-conflicts-and-corporate-governance-lessons-from-flipkart-snapdeal-ola-and-softbank-1639647849.pdf","A","2021-12-16 00:00:00",NULL
+"972","64","how-to-open-a-branch-office-project-office-or-liaison-office-in-india-1639647849.pdf","A","2021-12-16 00:00:00",NULL
+"973","64","key-terms-of-the-merger-control-regime-1639647849.pdf","A","2021-12-16 00:00:00",NULL
+"974","64","overview-of-stamp-duty-in-mergers-and-acquisitions-1639647868.pdf","A","2021-12-16 00:00:00",NULL
+"975","64","sample-termsheet-1639647868.pdf","A","2021-12-16 00:00:00",NULL
+"976","64","shareholders-agreements--1639647868.pdf","A","2021-12-16 00:00:00",NULL
+"977","64","template--due-diligence-report-1639647868.pdf","A","2021-12-16 00:00:00",NULL
+"978","64","template--requisition-list-1639647869.pdf","A","2021-12-16 00:00:00",NULL
+"979","64","the-lifecycle-of-a-combination-before-the-cci-1639647869.pdf","A","2021-12-16 00:00:00",NULL
+"980","64","sample-exercise-draft-a-syndicate-loan-agreement-1639647891.pdf","A","2021-12-16 00:00:00",NULL
+"981","64","sample-exercises-drafting-business-transfer-agreement-1639647891.pdf","A","2021-12-16 00:00:00",NULL
+"982","64","goal-setting-and-action-plan-towards-success-1639647908.pdf","A","2021-12-16 00:00:00",NULL
+"983","64","introduction-to-business-communication-1639647908.pdf","A","2021-12-16 00:00:00",NULL
+"984","64","advanced-guidelines-for-contract-drafting-and-contract-review-1639647908.pdf","A","2021-12-16 00:00:00",NULL
+"985","64","overview-of-the-us-economy-1639647926.pdf","A","2021-12-16 00:00:00",NULL
+"986","64","us-federal-government--division-of-powers-1639647926.pdf","A","2021-12-16 00:00:00",NULL
+"987","64","corporate-regulators-in-the-united-states-and-their-functioning-1639647926.pdf","A","2021-12-16 00:00:00",NULL
+"988","64","a-primer-on-matters-which-can-be-dealt-with-by-nclt-1639647944.pdf","A","2021-12-16 00:00:00",NULL
+"989","64","how-relevant-is-court-craft-in-appearing-before-the-national-company-law-tribunal-1639647944.pdf","A","2021-12-16 00:00:00",NULL
+"990","64","how-to-draft-a-petition-for-approval-of-scheme-of-arrangement-and-allied-matters-1639647944.pdf","A","2021-12-16 00:00:00",NULL
+"991","64","how-to-choose-between-winding-up-and-liquidation-1639647971.pdf","A","2021-12-16 00:00:00",NULL
+"992","64","initiation-of-insolvency-proceedings-by-homebuyers-1639647971.pdf","A","2021-12-16 00:00:00",NULL
+"993","64","is-there-a-code-of-conduct-applicable-to-insolvency-professionals-1639647971.pdf","A","2021-12-16 00:00:00",NULL
+"994","64","strategic-insights-with-respect-to-insolvency-proceedings-against-personal-guarantor-1639647972.pdf","A","2021-12-16 00:00:00",NULL
+"995","64","template--application-by-financial-creditor-to-initiate-corporate-irp-1639647972.pdf","A","2021-12-16 00:00:00",NULL
+"996","64","template--application-for-initiation-of-cirp-under-section-9-1639647972.pdf","A","2021-12-16 00:00:00",NULL
+"997","64","sample-exercises-on-draft-an-application-on-behalf-of-a-financial-creditor-to-initiate-insolvency-of-a-company-1639648036.pdf","A","2021-12-16 00:00:00",NULL
+"998","64","sample-exercises-on-identifying-avoidable-transactions-and-its-consequences-1639648037.pdf","A","2021-12-16 00:00:00",NULL
+"999","172","arms-length-price-and-methods-of-calculation-1641654494.pdf","A","2022-01-08 00:00:00",NULL
+"1000","172","how-is-cognizance-of-offences-dealt-with-in-other-economic-statutes-1641654496.pdf","A","2022-01-08 00:00:00",NULL
+"1001","172","angel-tax-tax-on-investments-in-startups-1641654497.pdf","A","2022-01-08 00:00:00",NULL
+"1002","172","how-to-deal-with-search-seizure-confiscation-and-summons-under-gst-1641654498.pdf","A","2022-01-08 00:00:00",NULL
+"1003","172","overview-of-offences-under-gst-statutes-1641654499.pdf","A","2022-01-08 00:00:00",NULL
+"1004","172","sample-exercises-on-gst-registration-and-compliances-1641654500.pdf","A","2022-01-08 00:00:00",NULL
+"1005","172","sample-exercises-on-international-taxation-and-dtaas-1641654501.pdf","A","2022-01-08 00:00:00",NULL
+"1006","172","template--debit--credit-note-1641654528.pdf","A","2022-01-08 00:00:00",NULL
+"1007","172","authority-for-advance-ruling-gst-1641654539.pdf","A","2022-01-08 00:00:00",NULL
+"1008","172","sample-exercises-on-advance-authority-of-ruling-anti-profiteering-and-writ-petitions-under-the-gst-law-1641654540.pdf","A","2022-01-08 00:00:00",NULL
+"1009","178","week-1-1642560807.docx","A","2022-01-19 00:00:00",NULL
+"1010","178","week-2-1642560807.docx","A","2022-01-19 00:00:00",NULL
+"1011","178","week-3-1642560807.docx","A","2022-01-19 00:00:00",NULL
+"1013","197","clat-pg-sample-mock-1669188035.pdf","A","2022-11-23 00:00:00",NULL
+"1014","196","ibps-so-prelims-1669188180.pdf","A","2022-11-23 00:00:00",NULL
+"1015","206","set-of-instructions-free-mock-test-ugc-net-1677250552.pdf","A","2023-02-24 00:00:00",NULL
+"1016","212","maharashtra-sample-mock--sheet1-1678696608.pdf","A","2023-03-13 00:00:00",NULL
+"1017","227","sample-mock--test-series-1684318144.pdf","A","2023-05-17 00:00:00",NULL
+"1056","299","international-patent-application-through-the-patent-cooperation-treaty-1724400100.pdf","A","2024-08-23 00:00:00",NULL
+"1057","299","licensing-in-patents-1724400100.pdf","A","2024-08-23 00:00:00",NULL
+"1058","299","patent-examination-process-1724400100.pdf","A","2024-08-23 00:00:00",NULL
+"1059","299","template--draft-of-patent-opposition-application-1724400100.pdf","A","2024-08-23 00:00:00",NULL
+"1060","299","sample-exercises-on-filing-a-suit-for-infringement-of-patents-and-preparing-a-defence-strategy-against-an-infringement-suit-1724400100.pdf","A","2024-08-23 00:00:00",NULL
+"1065","73","monthly-newsletter-july-2025-1755684784.pdf","A","2025-08-20 00:00:00",NULL
+"1066","73","formation-of-a-valid-contract-1755684784.pdf","A","2025-08-20 00:00:00",NULL
+"1067","73","transfer-for-the-benefit-of-unborn-person-section-13-1755684784.pdf","A","2025-08-20 00:00:00",NULL
+"1068","73","presumptions-as-to-documents-1755684784.pdf","A","2025-08-20 00:00:00",NULL
+"1069","73","july-2025-case-laws-compendium-monthly-1755684784.pdf","A","2025-08-20 00:00:00",NULL
+"1070","73","order-for-maintenance-of-wives-children-and-parents-1755684784.pdf","A","2025-08-20 00:00:00",NULL
+"1071","73","res-sub-judice-1755684784.pdf","A","2025-08-20 00:00:00",NULL
+"1072","6","founderinvestor-conflicts-and-corporate-governance-lessons-from-flipkart-snapdeal-ola-and-softbank-1755956455.pdf","A","2025-08-23 00:00:00",NULL
+"1073","6","role-of-lawyers-bankers-and-compliance-professionals-in-merger--acquisition-transaction-1755956455.pdf","A","2025-08-23 00:00:00",NULL
+"1074","6","sample-due-diligence-report-1755956455.pdf","A","2025-08-23 00:00:00",NULL
+"1075","6","shareholders-agreements-1755956455.pdf","A","2025-08-23 00:00:00",NULL
+"1076","6","case-study--googles-acquisition-of-motorola-mobility-1755956492.pdf","A","2025-08-23 00:00:00",NULL
+"1077","6","fdi-in-ecommerce-ventures-and-structuring-issues-1755956492.pdf","A","2025-08-23 00:00:00",NULL
+"1078","6","intercorporate-loans-1755956492.pdf","A","2025-08-23 00:00:00",NULL
+"1079","6","takeover-of-listed-enities-1755956492.pdf","A","2025-08-23 00:00:00",NULL
+"1080","6","exercise-draft-a-share-pledge-agreement-1755956603.pdf","A","2025-08-23 00:00:00",NULL
+"1081","6","fast-track-mergers-1755956603.pdf","A","2025-08-23 00:00:00",NULL
+"1082","6","introduction-to-debt-finance-types-of-credit-facilities-1755956603.pdf","A","2025-08-23 00:00:00",NULL
+"1083","6","weekly-exercises-on-drafting-of-loan-agreement--november-2024-1755956603.pdf","A","2025-08-23 00:00:00",NULL
+"1084","6","asset-purchase-agreement-1755956660.pdf","A","2025-08-23 00:00:00",NULL
+"1085","6","sample--share-pledge-agreement-1755956660.pdf","A","2025-08-23 00:00:00",NULL
+"1086","6","single-bank-loan-agreement-1755956660.pdf","A","2025-08-23 00:00:00",NULL
+"1087","6","template--requisition-list-1755956660.pdf","A","2025-08-23 00:00:00",NULL
+"1088","6","an-overview-of-fdi-regulations-1755956687.pdf","A","2025-08-23 00:00:00",NULL
+"1089","99","dummy-1757503998.pdf","A","2025-09-10 00:00:00",NULL
+"1090","19","reputational-hazards-and-antisexual-harassment-compliance--lessons-from-the-tehelka-case-study-1757843920.pdf","A","2025-09-14 00:00:00",NULL
+"1091","19","2--how-ubers-regulatory-soup-points-to-new-career-opportunities-1757850612.pdf","A","2025-09-14 00:00:00",NULL
+"1092","19","-sexual-harassment-at-the-workplace-in-the-age-of-me-too-1757850717.pdf","A","2025-09-14 00:00:00",NULL
+"1093","19","-principles-of-natural-justice-for-disciplinary-inquiries-posh-act-1757850940.pdf","A","2025-09-14 00:00:00",NULL
+"1094","19","-role-of-men-in-antisexual-harassment-compliance-1757850940.pdf","A","2025-09-14 00:00:00",NULL
+"1095","19","-how-should-false-complaints-be-handled-a-4step-guide-for-the-organization-and-the-icc-to-minimize-risk-and-legal-abuse-1757851147.pdf","A","2025-09-14 00:00:00",NULL
+"1096","19","-what-to-do-if-a-false-complaint-is-filed-against-you-1757851147.pdf","A","2025-09-14 00:00:00",NULL
+"1097","19","weekly-exercises-on-how-to-draft-a-settlement-agreement-interim-order--notice-for-hearing-under-the-posh-act-2013--june-2025-1757851147.pdf","A","2025-09-14 00:00:00",NULL
+"1098","19","what-can-workplace-diversity-consultants-do-in-india-getting-you-started-1757851147.pdf","A","2025-09-14 00:00:00",NULL
+"1099","19","template-show-cause-notice-to-the-accused-uthe-posh-act-2013-1757851148.pdf","A","2025-09-14 00:00:00",NULL
+"1100","19","template-witness-statement-uthe-posh-act-2013-1757851148.pdf","A","2025-09-14 00:00:00",NULL
+"1101","19","template-interim-order-uthe-posh-act-2013-1757851148.pdf","A","2025-09-14 00:00:00",NULL
+"1105","152","-financing-documents-1757852074.pdf","A","2025-09-14 00:00:00",NULL
+"1106","152","mortgages-and-mortgage-due-diligence--1757852094.pdf","A","2025-09-14 00:00:00",NULL
+"1107","152","-how-is-p2p-lending-and-p2p-lending-platforms-regulated--1757852094.pdf","A","2025-09-14 00:00:00",NULL
+"1108","145","film-distribution-agreements-1757853664.pdf","A","2025-09-14 00:00:00",NULL
+"1109","145","-product-placement-agreement-1757853664.pdf","A","2025-09-14 00:00:00",NULL
+"1110","145","template-celebrity-endorsement-agreement-1757853664.pdf","A","2025-09-14 00:00:00",NULL
+"1111","95","chapter-shops--establishments-acts-of-indian-states-1757863720.pdf","A","2025-09-14 00:00:00",NULL
+"1112","95","-legal-validity-of-noncompete-clauses-and-employment-bonds-1757863720.pdf","A","2025-09-14 00:00:00",NULL
+"1113","95","-employment-agreements--lessons-from-infosys-on-cxo-employment-contracts-1757863720.pdf","A","2025-09-14 00:00:00",NULL
+"1114","95","-practical-utility-of-fixed-term-employment-1757863720.pdf","A","2025-09-14 00:00:00",NULL
+"1115","95","-how-to-handle-false-sexual-harassment-complaints-1757863721.pdf","A","2025-09-14 00:00:00",NULL
+"1116","95","-how-to-deal-with-misconduct-fines--disciplinary-consequences-under-standing-orders-act-1757863721.pdf","A","2025-09-14 00:00:00",NULL
+"1117","95","-is-differential-payment-on-the-basis-of-experience-education-or-responsibility-level-permissible-1757863751.pdf","A","2025-09-14 00:00:00",NULL
+"1118","95","chapter-the-factories-act-1948-1757863751.pdf","A","2025-09-14 00:00:00",NULL
+"1119","95","-how-to-work-with-contractors-1757863751.pdf","A","2025-09-14 00:00:00",NULL
+"1120","95","weekly-exercise-on-how-to-identify-terms-of-engagement-applicable-to-employees-interns-trainees-and-apprentices-1757863751.pdf","A","2025-09-14 00:00:00",NULL
+"1121","95","checklist-exhaustive-compliance-wthe-posh-act-2013-1757863751.pdf","A","2025-09-14 00:00:00",NULL
+"1122","95","disciplinary-proceedings-misconduct-punishment--termination-without-inquiry-1757863795.pdf","A","2025-09-14 00:00:00",NULL
+"1123","95","employment-agreements-1757863795.pdf","A","2025-09-14 00:00:00",NULL
+"1124","95","how-to-handle-labour-violence--unrest-1757863795.pdf","A","2025-09-14 00:00:00",NULL
+"1125","95","power--hierarchy-of-labour-courts-1757863795.pdf","A","2025-09-14 00:00:00",NULL
+"1126","95","weekly-exercises-on-the-code-on-wages-2019-and-the-payment-of-wages-act-1936-1757863796.pdf","A","2025-09-14 00:00:00",NULL
+"1127","95","sample-exercises-on-draft-a-whistleblower-policy-1757863796.pdf","A","2025-09-14 00:00:00",NULL
+"1128","95","weekly-exercises-on-common-compliance-requirements-under-shops--establishments-acts-1757863796.pdf","A","2025-09-14 00:00:00",NULL
+"1129","95","template-appeal-challenging-the-order-passed-by-the-controlling-authority-1757863796.pdf","A","2025-09-14 00:00:00",NULL
+"1130","95","template-posh-policy-uthe-posh-act-2013-1757863796.pdf","A","2025-09-14 00:00:00",NULL
+"1131","149","1-advanced-guidelines-for-contract-drafting-and-contract-review-1757933308.pdf","A","2025-09-15 00:00:00",NULL
+"1132","149","copy-of-goal-setting-and-action-plan-towards-success-1757933308.pdf","A","2025-09-15 00:00:00",NULL
+"1133","149","-private-placements-in-unlisted-entities-1757933308.pdf","A","2025-09-15 00:00:00",NULL
+"1134","78","-passive-voice-in-legal-and-business-writing-1757938278.pdf","A","2025-09-15 00:00:00",NULL
+"1135","78","precision-in-legal-englishcompressed-1757938278.pdf","A","2025-09-15 00:00:00",NULL
+"1136","78","reading-and-interpreting-contracts-judgments-and-reports-1757938278.pdf","A","2025-09-15 00:00:00",NULL
+"1137","78","statutory-interpretation-techniques-decoding-the-law-1757938278.pdf","A","2025-09-15 00:00:00",NULL
+"1138","78","citation-styles-in-legal-english-communication-1757938278.pdf","A","2025-09-15 00:00:00",NULL
+"1161","153","sample-exercise--draft-an-application-under-section-7-of-ibc-and-its-reply-1758259938.pdf","A","2025-09-19 00:00:00",NULL
+"1162","153","sample-exercise--draft-a-legal-opinion-and-petition-on-oppression-and-mismanagement-1758259938.pdf","A","2025-09-19 00:00:00",NULL
+"1163","153","-advanced-issues-for-financial-creditors-1758259938.pdf","A","2025-09-19 00:00:00",NULL
+"1164","153","-august-2019-amendments-to-ibc--its-practical-impact-1758259939.pdf","A","2025-09-19 00:00:00",NULL
+"1165","153","-different-types-of-ma-transactions--1758259939.pdf","A","2025-09-19 00:00:00",NULL
+"1166","153","-a-primer-on-matters-which-can-be-dealt-with-by-nclt-1758259939.pdf","A","2025-09-19 00:00:00",NULL
+"1167","153","template--scheme-of-amalgamation-1758259939.pdf","A","2025-09-19 00:00:00",NULL
+"1168","153","template--asset-purchase-agreement-1758259939.pdf","A","2025-09-19 00:00:00",NULL
+"1169","153","sample-exercises-on-identifying-avoidable-transactions-and-its-consequences-1758259939.pdf","A","2025-09-19 00:00:00",NULL
+"1170","153","sample-exercises-on-draft-an-application-on-behalf-of-a-financial-creditor-to-initiate-insolvency-of-a-company-1758259939.pdf","A","2025-09-19 00:00:00",NULL
+"1171","153","how-to-obtain-dispensation-from-conducting-of-meetings-of-members-and-creditors-1758259939.pdf","A","2025-09-19 00:00:00",NULL
+"1172","153","how-to-draft-a-petition-for-oppression-and-mismanagement-1758259940.pdf","A","2025-09-19 00:00:00",NULL
+"1173","153","-how-to-draft-a-petition-for-approval-of-scheme-of-arrangement-and-allied-matters-1758259940.pdf","A","2025-09-19 00:00:00",NULL
+"1174","153","-how-relevant-is-court-craft-in-appearing-before-the-national-company-law-tribunal-1758259940.pdf","A","2025-09-19 00:00:00",NULL
+"1175","153","appeals-under-section-58-and-application-under-section-59-1758259940.pdf","A","2025-09-19 00:00:00",NULL
+"1176","153","appeal-for-revival-and-restoration-of-companies-1758259940.pdf","A","2025-09-19 00:00:00",NULL
+"1177","131","-us-executive-organs-of-the-state-1758263582.pdf","A","2025-09-19 00:00:00",NULL
+"1178","131","nondisclosure-agreementsuscdcompressedcompressed-1758263582.pdf","A","2025-09-19 00:00:00",NULL
+"1179","131","weekly-exercises-on-terms-of-service--subscription-agreementjuly-2025-1758263582.pdf","A","2025-09-19 00:00:00",NULL
+"1180","131","templatenondisclosureagreementlyst9286-1758263582.pdf","A","2025-09-19 00:00:00",NULL
+"1181","142","copy-of-website-privacy-policy-1758264651.pdf","A","2025-09-19 00:00:00",NULL
+"1182","142","copy-of-laws-enacted-to-protect-health-information-the-health-insurance-portability-and-accountability-act-hipaacompressed-1758264651.pdf","A","2025-09-19 00:00:00",NULL
+"1183","142","copy-of-federal-organisations-in-the-usa-regulating-technology-companies-1758264651.pdf","A","2025-09-19 00:00:00",NULL
+"1184","141","data-protection-regulations-in-the-uk-postbrexit-1758364179.pdf","A","2025-09-20 00:00:00",NULL
+"1185","141","why-is-data-sought-to-be-protected-and-different-types-of-data-1758364179.pdf","A","2025-09-20 00:00:00",NULL
+"1186","9","-doneopen-source-licenses-validity-key-insights-and-major-open-source-licenses-1758376768.pdf","A","2025-09-20 00:00:00",NULL
+"1187","9","-done-ip-strategy-to-protect-games-case-study-of-mattel-1758376768.pdf","A","2025-09-20 00:00:00",NULL
+"1188","9","-non-conventional-trademarks--sound-colour--smell-1758376768.pdf","A","2025-09-20 00:00:00",NULL
+"1189","9","-done-franchising-and-licensing-agreements-1758376768.pdf","A","2025-09-20 00:00:00",NULL
+"1190","9","-sample-franchisee-agreement-for-restaurant-industry-1758376768.pdf","A","2025-09-20 00:00:00",NULL
+"1191","9","-doneprotection-of-ip-from-employees-consultants-and-vendors-1758376768.pdf","A","2025-09-20 00:00:00",NULL
+"1192","9","-sample--draft-of-patent-opposition-application-1758376768.pdf","A","2025-09-20 00:00:00",NULL
+"1193","9","copyright-in-films-1758376812.pdf","A","2025-09-20 00:00:00",NULL
+"1194","9","drafting-and-negotiating-licensing-and-franchising-agreements-1758376812.pdf","A","2025-09-20 00:00:00",NULL
+"1195","9","how-and-when-to-use-geographical-indications-1758376813.pdf","A","2025-09-20 00:00:00",NULL
+"1196","9","how-to-deal-with-domain-name-disputes-and-cyber-squatting-edited-1758376813.pdf","A","2025-09-20 00:00:00",NULL
+"1197","9","music-production-agreement-1758376813.pdf","A","2025-09-20 00:00:00",NULL
+"1198","9","sample-exercises-on-drafting-prepublication-objection-and-response-to-the-examiners-report-1758376813.pdf","A","2025-09-20 00:00:00",NULL
+"1199","9","sample-exercises-on-nontheatrical-exploitation-of-thirdparty-content-1758376813.pdf","A","2025-09-20 00:00:00",NULL
+"1200","9","sample-exercises-on-showrunner-agreements-1758376852.pdf","A","2025-09-20 00:00:00",NULL
+"1201","9","stepby-step-trademark-registration-process-in-india--1758376852.pdf","A","2025-09-20 00:00:00",NULL
+"1202","9","template--draft-of-patent-opposition-application-1758376852.pdf","A","2025-09-20 00:00:00",NULL
+"1203","9","template--infringement-passingoff-petition-1758376852.pdf","A","2025-09-20 00:00:00",NULL
+"1204","9","template--rectification-petition-1758376852.pdf","A","2025-09-20 00:00:00",NULL
+"1205","9","trademark-selection-and-strategy-insights-1758376852.pdf","A","2025-09-20 00:00:00",NULL
+"1206","9","-how-and-why-to-create-a-trademark-strategy-from-early-on-1758376852.pdf","A","2025-09-20 00:00:00",NULL
+"1207","9","-trademark-opposition-and-litigation-1758376852.pdf","A","2025-09-20 00:00:00",NULL
+"1208","9","-patent-litigationi--pre-and-postgrant-opposition-1758376852.pdf","A","2025-09-20 00:00:00",NULL
+"1209","9","film-certification-for-original-content-by-netflix-amazon-1758376853.pdf","A","2025-09-20 00:00:00",NULL
+"1210","9","how-are-trps-television-rating-points-measured-1758376853.pdf","A","2025-09-20 00:00:00",NULL
+"1211","9","sample-classroom-recordings--recorded-sessions-1758376853.pdf","A","2025-09-20 00:00:00",NULL
+"1212","9","videos-1758376853.pdf","A","2025-09-20 00:00:00",NULL
+"1213","9","exercise-1-copyrightability-criteria-and-registration-1758376880.pdf","A","2025-09-20 00:00:00",NULL
+"1214","9","exercise-1-marked-up-assignment-for-copyrightability-criteria-1758376880.pdf","A","2025-09-20 00:00:00",NULL
+"1215","9","-copyright-infringement-and-practical-remedies-1758376880.pdf","A","2025-09-20 00:00:00",NULL
+"1216","9","-fair-use-1758376880.pdf","A","2025-09-20 00:00:00",NULL
+"1217","9","-how-early-stage-businesses-can-use-copyright-law-to-protect-important-works-1758376880.pdf","A","2025-09-20 00:00:00",NULL
+"1218","9","-registration-of-copyright-and-benefits-1758376880.pdf","A","2025-09-20 00:00:00",NULL
+"1219","9","exercise-2-draft-a-terms-of-use--terms-of-service-1758376880.pdf","A","2025-09-20 00:00:00",NULL
+"1220","9","exercise-2-marked-up-assignment-of-terms-of-use-1758376899.pdf","A","2025-09-20 00:00:00",NULL
+"1221","9","-how-to-draft-terms-of-use--terms-of-service-1758376899.pdf","A","2025-09-20 00:00:00",NULL
+"1222","180","-negotiation-mediation-and-conciliation-clauses-and-processes-in-india-1758604141.pdf","A","2025-09-23 00:00:00",NULL
+"1223","180","-statement-of-claims-and-statement-of-defense-1758604141.pdf","A","2025-09-23 00:00:00",NULL
+"1224","180","-initiation-of-arbitration-proceedings-1758604141.pdf","A","2025-09-23 00:00:00",NULL
+"1225","180","-stages-in-an-institutional-arbitration-proceeding-1758604141.pdf","A","2025-09-23 00:00:00",NULL
+"1226","180","-fast-track-and-appellate-arbitration-1758604141.pdf","A","2025-09-23 00:00:00",NULL
+"1227","9","-how-to-draft-a-patent-application-1758604790.pdf","A","2025-09-23 00:00:00",NULL
+"1228","9","-copyright-infringement-and-practical-remedies-1758604921.pdf","A","2025-09-23 00:00:00",NULL
+"1229","169","-llc-formation--operating-agreementcompressed-1758635695.pdf","A","2025-09-23 00:00:00",NULL
+"1230","161","how-to-approach-contracts-for-california-bar-exam-1758636945.pdf","A","2025-09-23 00:00:00",NULL
+"1231","161","comprehensive-guide-to-california-bar-examcompressed-1758636946.pdf","A","2025-09-23 00:00:00",NULL
+"1232","163","canada-bar-exam-1758637057.pdf","A","2025-09-23 00:00:00",NULL
+"1234","22","-cofounders-agreement-1758971144.pdf","A","2025-09-27 00:00:00",NULL
+"1235","22","-cofounders-agreement-template-detailed-1758971144.pdf","A","2025-09-27 00:00:00",NULL
+"1236","22","-indirect-taxes-introduction-to-gst-1758971144.pdf","A","2025-09-27 00:00:00",NULL
+"1237","22","-related-party-transactions--done-1758971213.pdf","A","2025-09-27 00:00:00",NULL
+"1238","22","-key-internal-company-policies-1758971213.pdf","A","2025-09-27 00:00:00",NULL
+"1239","22","-how-to-negotiate-commercial-leases-1758971213.pdf","A","2025-09-27 00:00:00",NULL
+"1240","22","-corporate-lease-agreement-sample-1758971237.pdf","A","2025-09-27 00:00:00",NULL
+"1241","22","creating-incentives-for-employees-through-stock-options-and-sweat-equity-schemes-1758971279.pdf","A","2025-09-27 00:00:00",NULL
+"1242","22","how-to-open-a-branch-office-project-office-or-liaison-office-in-india-1758971279.pdf","A","2025-09-27 00:00:00",NULL
+"1243","22","how-to-prepare-management-reports-1758971424.pdf","A","2025-09-27 00:00:00",NULL
+"1244","22","litigation-strategy-for-money-recovery-suits-1758971424.pdf","A","2025-09-27 00:00:00",NULL
+"1245","22","sample-exercises-on-arbitrability-of-disputes-and-drafting-a-notice-for-commencement-of-arbitration-1758971424.pdf","A","2025-09-27 00:00:00",NULL
+"1246","22","sample-exercises-on-trademark-concepts-1758971424.pdf","A","2025-09-27 00:00:00",NULL
+"1247","22","template--business-transfer-agreement-1758971424.pdf","A","2025-09-27 00:00:00",NULL
+"1248","22","how-to-draft-an-llp-agreement-1758971459.pdf","A","2025-09-27 00:00:00",NULL
+"1249","22","-llp-agreement--template-1758971459.pdf","A","2025-09-27 00:00:00",NULL
+"1250","22","-stages-in-an-investment-transaction-1758971613.pdf","A","2025-09-27 00:00:00",NULL
+"1251","22","-draft-csr-policy-1758971613.pdf","A","2025-09-27 00:00:00",NULL
+"1252","22","-how-to-draft-external-and-internal-communications-1758971790.pdf","A","2025-09-27 00:00:00",NULL
+"1253","22","-role-of-sebi-and-cci-in-foreign-investments--jet-etihad-case-study-1758971791.pdf","A","2025-09-27 00:00:00",NULL
+"1254","22","-eulas-1758971791.pdf","A","2025-09-27 00:00:00",NULL
+"1255","22","-employment-agreements-1758971791.pdf","A","2025-09-27 00:00:00",NULL
+"1256","22","-electronic-contracts-and-digital-signatures-1758971791.pdf","A","2025-09-27 00:00:00",NULL
+"1257","22","-sample-termsheet-1758971791.pdf","A","2025-09-27 00:00:00",NULL
+"1258","22","exercise-2-reference-material--negotiating-commercial-leases-1758971791.pdf","A","2025-09-27 00:00:00",NULL
+"1259","22","-sample-esop-plan-1758971791.pdf","A","2025-09-27 00:00:00",NULL
+"1260","22","-ten-items-in-the-financial-statements-1758971900.pdf","A","2025-09-27 00:00:00",NULL
+"1261","22","-trademark-infringement-through-google-ads-search-results-and-keywords-1758971900.pdf","A","2025-09-27 00:00:00",NULL
+"1262","22","1-how-to-deal-with-online-infringement-of-trademarks-1758971900.pdf","A","2025-09-27 00:00:00",NULL
+"1263","22","-pointers-for-drafting-a-legal-notice-and-responding-to-them-1758971900.pdf","A","2025-09-27 00:00:00",NULL
+"1264","22","-how-to-draft-a-master-services-agreement-sla-1758971901.pdf","A","2025-09-27 00:00:00",NULL
+"1265","22","-sample-master-services-agreement-and-statement-of-work-1758971901.pdf","A","2025-09-27 00:00:00",NULL
+"1272","4","chapter-leave-and-license-agreements-lease-agreements-and-power-of-attorney-1759848410.pdf","A","2025-10-07 00:00:00",NULL
+"1273","4","5-joint-development-agreements-1759848411.pdf","A","2025-10-07 00:00:00",NULL
+"1274","4","regulation-of-real-estate-agents-under-rera-1759848411.pdf","A","2025-10-07 00:00:00",NULL
+"1275","4","registration-of-documents-legal-framework-practice-and-reforms--1759848411.pdf","A","2025-10-07 00:00:00",NULL
+"1276","4","2-legal-framework-for-smart-cities-1759848411.pdf","A","2025-10-07 00:00:00",NULL
+"1277","4","1-introduction-to-real-estate-1759848411.pdf","A","2025-10-07 00:00:00",NULL
+"1278","269","aibe-xix-analysis-1759899777.pdf","A","2025-10-08 00:00:00",NULL
+"1279","269","top-5-mistakes-to-avoid-while-preparing-for-aibe-exam-1759899777.pdf","A","2025-10-08 00:00:00",NULL
+"1280","269","aibe-xix-1759899777.pdf","A","2025-10-08 00:00:00",NULL
+"1281","269","quick-elimination-techniques-for-tricky-cpc-mcqs-aibe-1759899777.pdf","A","2025-10-08 00:00:00",NULL
+"1282","269","-an-analysis-of-article-13-of-the-constitution-1759899777.pdf","A","2025-10-08 00:00:00",NULL
+"1283","269","case-law-based-questions-understanding-landmark-judgments--1759899777.pdf","A","2025-10-08 00:00:00",NULL
+"1284","283","speed-reading-1759900557.pdf","A","2025-10-08 00:00:00",NULL
+"1285","283","copy-of-clatug-practice-mock-1-logical-reasoning-1759900558.pdf","A","2025-10-08 00:00:00",NULL
+"1286","283","tort-law-1759900558.pdf","A","2025-10-08 00:00:00",NULL
+"1287","283","contract-law-1759900558.pdf","A","2025-10-08 00:00:00",NULL
+"1288","283","criminal-law-1759900558.pdf","A","2025-10-08 00:00:00",NULL
+"1289","2","day-1--why-you-need-a-checklist-before-drafting-any-contract--1760276446.pdf","A","2025-10-12 00:00:00",NULL
+"1290","2","copy-of-day-2--checklist-for-drafting-an-effective-indemnity-clause-1760276446.pdf","A","2025-10-12 00:00:00",NULL
+"1291","2","day-3--nondisclosure-agreements-1760276446.pdf","A","2025-10-12 00:00:00",NULL
+"1292","2","day-4--registration-1760276446.pdf","A","2025-10-12 00:00:00",NULL
+"1293","2","-how-giants-of-silicon-valley-negotiate-contracts-what-can-you-learn-from-it-1760276446.pdf","A","2025-10-12 00:00:00",NULL
+"1294","2","video-1760276460.xlsx","A","2025-10-12 00:00:00",NULL
+"1295","2","cloud-computing-and-the-law-1760276583.pdf","A","2025-10-12 00:00:00",NULL
+"1296","2","governing-law-jurisdiction-dispute-resolution-and-arbitration-1760276583.pdf","A","2025-10-12 00:00:00",NULL
+"1297","2","how-to-negotiate-commercial-leases-1760276583.pdf","A","2025-10-12 00:00:00",NULL
+"1298","2","legal-requirements-for-validity-and-enforcement-1760276583.pdf","A","2025-10-12 00:00:00",NULL
+"1299","2","shareholders-agreements--1760276583.pdf","A","2025-10-12 00:00:00",NULL
+"1300","2","template--trademark-assignment-agreement-1760276583.pdf","A","2025-10-12 00:00:00",NULL
+"1301","166","6-llc-formation--operating-agreement-1760786387.pdf","A","2025-10-18 00:00:00",NULL
+"1302","182","initiation-of-corporate-insolvency-resolution-process-by-corporate-debtor-applicant-1762005657.pdf","A","2025-11-01 00:00:00",NULL
+"1303","182","how-to-draft-an-application-to-initiate-insolvency-resolution-process-by-a-corporate-debtor-1762005657.pdf","A","2025-11-01 00:00:00",NULL
+"1304","182","template--board-resolution--ibc-1762005657.pdf","A","2025-11-01 00:00:00",NULL
+"1305","105","chapter-1-introduction-on-international-arbitration-law-1762005783.pdf","A","2025-11-01 00:00:00",NULL
+"1306","105","chapter-2-determining-the-applicable-foreign-exchange-rate-1762005783.pdf","A","2025-11-01 00:00:00",NULL
+"1307","105","chapter-3-timelimit-for-arbitral-award-in-international-arbitration-1762005783.pdf","A","2025-11-01 00:00:00",NULL
+"1308","162","new-ukbarexamsqe1758637178-1762006021.pdf","A","2025-11-01 00:00:00",NULL
+"1309","162","legal-system-of-england--wales-introduction-to-the-court-system-1762006021.pdf","A","2025-11-01 00:00:00",NULL
+"1310","162","law-of-torts-introduction-to-law-of-torts-in-england-and-wales-1762006021.pdf","A","2025-11-01 00:00:00",NULL
+"1311","162","free-mock-test-sqe-1-functioning-legal-knowledge-flk1--flk2-1762006021.pdf","A","2025-11-01 00:00:00",NULL
+"1312","17","preliminary-steps-for-litigation-drafts-filing-and-court-machinery-1762581271.pdf","A","2025-11-08 00:00:00",NULL
+"1313","17","drafting-a-plaint-1762581271.pdf","A","2025-11-08 00:00:00",NULL
+"1314","17","template--plaint-1762581271.pdf","A","2025-11-08 00:00:00",NULL
+"1315","273","career-in-criminal-law-and-role-of-a-lawyer-1762583127.pdf","A","2025-11-08 00:00:00",NULL
+"1316","273","what-is-a-first-information-report-1762583127.pdf","A","2025-11-08 00:00:00",NULL
+"1317","273","what-happens-if-the-police-refuse-to-register-an-fir-1762583127.pdf","A","2025-11-08 00:00:00",NULL
+"1318","273","section-138-litigation-under-negotiable--instruments-act-1762583127.pdf","A","2025-11-08 00:00:00",NULL
+"1319","273","sample--sec138-complaint--template-1-1762583153.pdf","A","2025-11-08 00:00:00",NULL
+"1320","181","writ-jurisdiction-of-supreme-court-1762583576.pdf","A","2025-11-08 00:00:00",NULL
+"1321","181","special-leave-petition-1762583577.pdf","A","2025-11-08 00:00:00",NULL
+"1322","181","templateslp-criminal-before-supreme-court-1762583577.pdf","A","2025-11-08 00:00:00",NULL
+"1323","300","how-to-draft-a-patent-application-2-1762584086.pdf","A","2025-11-08 00:00:00",NULL
+"1324","300","patent-oppositions-1-1762584086.pdf","A","2025-11-08 00:00:00",NULL
+"1325","300","how-to-draft-a-patent-application-2-1-1762584086.pdf","A","2025-11-08 00:00:00",NULL
+"1326","132","introduction-to-smart-contracts-with-reference-to-subscription-agreements-and-the-gdpr-1763991285.pdf","A","2025-11-24 00:00:00",NULL
+"1327","132","vendor-agreement-factual-scenario-checklist-considerations-and-sample-clauses-1763991285.pdf","A","2025-11-24 00:00:00",NULL
+"1328","132","crossborder-contract-with-foreign-jurisdiction-and-governing-law-a-comprehensive-analysis-1763991285.pdf","A","2025-11-24 00:00:00",NULL
+"1329","140","controlled-foreign-corporation-and-passive-foreign-investment-company-1763995179.pdf","A","2025-11-24 00:00:00",NULL
+"1330","140","plan-of-conversion-1763995179.pdf","A","2025-11-24 00:00:00",NULL
+"1331","140","llc-formation-operating-agreementcompressed-1763995179.pdf","A","2025-11-24 00:00:00",NULL
+"1332","150","daos-operating-agreement--1763995397.pdf","A","2025-11-24 00:00:00",NULL
+"1333","150","administrating-your-clients-business-in-the-uae-1763995397.pdf","A","2025-11-24 00:00:00",NULL

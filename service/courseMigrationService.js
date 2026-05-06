@@ -10,6 +10,10 @@ const {
 } = require('./csvParserService');
 const { loadSectionDatasets, buildSectionContentMap } = require('./contentSectionService');
 
+/** S3 path for legacy course download files (tbl_course_download_files_mapping.file_name_value) */
+const STUDY_MATERIAL_THUMB_BASE =
+    'https://lawsikho-frontend-production.s3.amazonaws.com/public/uploads/course-download/thumbs/';
+
 async function previewCourses(options = {}) {
     const courses = await buildMigratedCourses(options);
     const filtered = filterCourses(courses, options);
@@ -25,6 +29,7 @@ async function migrateCourses(options = {}) {
     const courses = await buildMigratedCourses(options);
     const selectedCourses = filterCourses(courses, options);
     const results = [];
+    const config = getMigrationConfig();
 
     for (const course of selectedCourses) {
         if (options.dryRun) {
@@ -38,7 +43,30 @@ async function migrateCourses(options = {}) {
             continue;
         }
 
-        const apiResponse = await createCourse(course.payload);
+        let payload = { ...course.payload };
+        const items = course.meta.studyMaterialItems || [];
+
+        if (items.length > 0) {
+            const uploadResult = await uploadStudyMaterialsForCourse(items, config);
+
+            if (!uploadResult.ok) {
+                results.push({
+                    legacyCourseId: course.meta.legacyCourseId,
+                    title: course.payload.title,
+                    success: false,
+                    status: uploadResult.status,
+                    studyMaterialUploadError: uploadResult.body,
+                });
+                continue;
+            }
+
+            payload = {
+                ...payload,
+                study_material_mapping_ids: uploadResult.ids,
+            };
+        }
+
+        const apiResponse = await createCourse(payload);
 
         results.push({
             legacyCourseId: course.meta.legacyCourseId,
@@ -60,7 +88,8 @@ async function migrateCourses(options = {}) {
 
 async function buildMigratedCourses(options = {}) {
     const dataset = await loadMigrationSourceData(options);
-    const { courseRows, bannerRows, contentRows, courseTypeMap, mapping, sectionDatasets } = dataset;
+    const { courseRows, bannerRows, contentRows, courseTypeMap, mapping, sectionDatasets, downloadFilesByCourseId } =
+        dataset;
 
     const bannerMap  = buildBannerMap(bannerRows);
     const contentMap = buildContentMap(contentRows);
@@ -94,6 +123,7 @@ async function buildMigratedCourses(options = {}) {
                 sourceCourseName: courseRow.course_name || '',
                 contentRowCount: contentData.rowCount,
                 bannerFound: Boolean(Object.keys(bannerRow).length),
+                studyMaterialItems: buildStudyMaterialUploadItems(courseId, downloadFilesByCourseId),
             },
             payload,
         };
@@ -132,6 +162,7 @@ async function loadMigrationSourceData(options = {}) {
             sectionDatasets: {},
             courseTypeMap: buildCourseTypeMapById(courseTypeRows),
             mapping,
+            downloadFilesByCourseId: new Map(),
         };
     }
 
@@ -145,7 +176,7 @@ async function loadMigrationSourceData(options = {}) {
         courseRows.map((row) => String(row.id ?? '').trim()).filter(Boolean),
     );
 
-    const [bannerRows, contentRows, sectionDatasets] = await Promise.all([
+    const [bannerRows, contentRows, sectionDatasets, downloadMappingRows] = await Promise.all([
         collectCsvRowsWhere(config.csv.banner, (row) =>
             idSetForRelated.has(String(row.course_id ?? '').trim()),
         ),
@@ -153,6 +184,9 @@ async function loadMigrationSourceData(options = {}) {
             idSetForRelated.has(String(row.course_id ?? '').trim()),
         ),
         loadSectionDatasets(config, idSetForRelated),
+        collectCsvRowsWhere(config.csv.courseDownloadFilesMapping, (row) =>
+            idSetForRelated.has(String(row.course_id ?? '').trim()),
+        ),
     ]);
 
     return {
@@ -162,6 +196,7 @@ async function loadMigrationSourceData(options = {}) {
         sectionDatasets,
         courseTypeMap: buildCourseTypeMapById(courseTypeRows),
         mapping,
+        downloadFilesByCourseId: groupDownloadFilesByCourseId(downloadMappingRows),
     };
 }
 
@@ -233,6 +268,100 @@ function buildCourseTypeMapById(rows) {
     }
 
     return map;
+}
+
+/**
+ * Group tbl_course_download_files_mapping rows by legacy course_id.
+ */
+function groupDownloadFilesByCourseId(rows) {
+    const map = new Map();
+
+    for (const row of rows) {
+        const courseId = String(row.course_id ?? '').trim();
+        if (!courseId) continue;
+
+        if (!map.has(courseId)) {
+            map.set(courseId, []);
+        }
+
+        map.get(courseId).push(row);
+    }
+
+    return map;
+}
+
+/**
+ * Build payloads for POST /course/study-material/upload-url (ordered by mapping row id).
+ */
+function buildStudyMaterialUploadItems(courseId, downloadFilesByCourseId) {
+    const rows = (downloadFilesByCourseId.get(courseId) || [])
+        .filter((r) => String(r.status ?? '').trim().toUpperCase() === 'A');
+
+    if (!rows.length) {
+        return [];
+    }
+
+    rows.sort((a, b) => Number(a.id) - Number(b.id));
+
+    return rows.map((r) => {
+        const fileName = cleanText(r.file_name_value);
+        if (!fileName) {
+            return null;
+        }
+
+        const enc = encodeURIComponent(fileName);
+
+        return {
+            study_material_file_url: `${STUDY_MATERIAL_THUMB_BASE}${enc}`,
+            file_name: fileName,
+        };
+    }).filter(Boolean);
+}
+
+function resolveStudyMaterialUploadUrl(config) {
+    if (config.target.studyMaterialUploadUrl) {
+        return cleanText(config.target.studyMaterialUploadUrl);
+    }
+
+    const base = cleanText(config.target.baseUrl);
+    if (!base) {
+        return '';
+    }
+
+    return base.replace(/\/add\/?$/i, '/study-material/upload-url');
+}
+
+async function uploadStudyMaterialsForCourse(items, config) {
+    const url = resolveStudyMaterialUploadUrl(config);
+
+    if (!url || !items.length) {
+        return { ok: true, ids: [], skipped: !items.length };
+    }
+
+    const auth = buildAuthHeaders(config.target.token);
+    const headers = { 'Content-Type': 'application/json' };
+    if (auth.Authorization) {
+        headers.Authorization = auth.Authorization;
+    }
+
+    const response = await fetch(url, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(items),
+    });
+
+    const body = await readResponseBody(response);
+
+    if (!response.ok) {
+        return { ok: false, ids: [], status: response.status, body };
+    }
+
+    const dataArr = body && body.data;
+    const ids = Array.isArray(dataArr)
+        ? dataArr.map((d) => d && d.id).filter((id) => id != null && id !== '')
+        : [];
+
+    return { ok: true, ids, status: response.status, body };
 }
 
 function buildBannerMap(rows) {
@@ -725,6 +854,10 @@ function serializeFormValue(value) {
 
     if (typeof value === 'number') {
         return String(value);
+    }
+
+    if (Array.isArray(value)) {
+        return JSON.stringify(value);
     }
 
     return String(value);
