@@ -5,6 +5,8 @@
 
     "course_content": "content_title+content_details", 
 
+    "course_category": "type_of_course", //tbl_course.type_of_course
+
     "duration_minutes": "course_duration",   // my new db captures this in minutes but old db have a month (tbl_course.course_duration)
 
     "class_routine": "class_routine", // tbl_course.class_routine
