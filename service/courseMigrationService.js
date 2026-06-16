@@ -585,6 +585,10 @@ function normalizePayload(payload, sourceContext = {}) {
     ]);
 
     const numberFields = new Set(['amount']);
+    const integerFields = new Set([
+        'ap_portal_course_id',
+        'ap_portal_course_catagory_id',
+    ]);
 
     for (const key of Object.keys(payload)) {
         if (booleanFields.has(key)) {
@@ -600,6 +604,11 @@ function normalizePayload(payload, sourceContext = {}) {
 
         if (numberFields.has(key)) {
             payload[key] = normalizeAmount(payload[key]);
+            continue;
+        }
+
+        if (integerFields.has(key)) {
+            payload[key] = normalizeOptionalInteger(payload[key]);
             continue;
         }
 
@@ -792,6 +801,17 @@ function normalizeLogoType(value) {
 function normalizeAmount(value) {
     const numericValue = Number.parseFloat(String(value || '').replace(/,/g, ''));
     return Number.isFinite(numericValue) ? numericValue : 0;
+}
+
+function normalizeOptionalInteger(value) {
+    const cleanValue = cleanText(value);
+
+    if (!cleanValue) {
+        return '';
+    }
+
+    const numericValue = Number.parseInt(cleanValue, 10);
+    return Number.isFinite(numericValue) ? numericValue : '';
 }
 
 function normalizeDurationMinutes(durationValue, durationType) {
