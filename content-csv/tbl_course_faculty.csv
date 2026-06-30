@@ -3,7 +3,7 @@
 "2","3","Here are some of our faculty members","A","2019-10-21 17:59:48","2023-10-11 18:10:14"
 "3","4","Here are some of our faculty members","A","2019-10-21 18:54:35","2025-03-25 19:03:00"
 "4","5","Here are some of our faculty members","D","2019-10-21 21:20:02","2023-07-17 15:07:22"
-"5","6","Here are some of our faculty members","A","2019-10-22 11:58:54","2025-03-27 14:03:53"
+"5","6","Here are some of our faculty members","P","2019-10-22 11:58:54","2026-06-02 12:06:17"
 "6","7","Here are some of our faculty members","A","2019-10-22 12:13:41","2020-04-21 19:04:19"
 "7","8","Here are some of our faculty members","D","2019-10-22 14:12:58","2019-11-18 12:11:23"
 "8","10","Here are some of our faculty members","A","2019-10-22 16:06:48","2021-07-20 15:07:21"
@@ -156,3 +156,5 @@
 "155","368","Faculty","A","2025-11-09 19:34:23",NULL
 "156","370","Faculty","A","2025-12-04 17:14:36",NULL
 "157","372","Faculty","A","2025-12-12 14:19:07","2025-12-12 14:12:43"
+"158","390","Faculty","P","2026-06-13 10:46:03",NULL
+"159","391","Faculty","A","2026-06-13 18:16:41",NULL

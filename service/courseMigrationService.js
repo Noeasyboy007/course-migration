@@ -6,6 +6,7 @@ const {
     collectAllCsvRows,
     collectCsvRowsWhere,
     collectFirstNCsvRows,
+    collectCsvRowsSlice,
     streamCsvRecords,
 } = require('./csvParserService');
 const { loadSectionDatasets, buildSectionContentMap } = require('./contentSectionService');
@@ -80,6 +81,8 @@ async function migrateCourses(options = {}) {
     return {
         totalAvailable: courses.length,
         totalSelected: selectedCourses.length,
+        batchOffset: resolveOffset(options.offset),
+        batchLimit: options.limit != null && options.limit !== '' ? Number(options.limit) : null,
         successCount: results.filter((result) => result.success).length,
         failureCount: results.filter((result) => !result.success).length,
         results,
@@ -142,6 +145,20 @@ function resolveMaxRows(limit) {
     }
 
     return n;
+}
+
+function resolveOffset(offset) {
+    if (offset == null || offset === '') {
+        return 0;
+    }
+
+    const n = Number(offset);
+
+    if (!Number.isFinite(n) || n < 0) {
+        return 0;
+    }
+
+    return Math.floor(n);
 }
 
 /**
@@ -238,8 +255,10 @@ async function collectCourseRowsWithFilters(filePath, options = {}) {
         return matched;
     }
 
-    if (maxRows !== Number.POSITIVE_INFINITY) {
-        return collectFirstNCsvRows(filePath, maxRows);
+    const offset = resolveOffset(options.offset);
+
+    if (offset > 0 || maxRows !== Number.POSITIVE_INFINITY) {
+        return collectCsvRowsSlice(filePath, offset, maxRows);
     }
 
     return collectAllCsvRows(filePath);

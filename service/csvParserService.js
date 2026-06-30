@@ -59,11 +59,39 @@ async function collectFirstNCsvRows(filePath, n) {
         return [];
     }
 
+    return collectCsvRowsSlice(filePath, 0, n);
+}
+
+/**
+ * Read CSV rows in file order: skip `offset`, then take up to `limit` rows.
+ * limit = Infinity (default) means take all rows after offset.
+ */
+async function collectCsvRowsSlice(filePath, offset = 0, limit = Number.POSITIVE_INFINITY) {
+    const off = Math.max(0, Number(offset) || 0);
+    const lim = limit == null || limit === '' ? Number.POSITIVE_INFINITY : Number(limit);
+
+    if (lim <= 0) {
+        return [];
+    }
+
     const rows = [];
+    let skipped = 0;
+
     await streamCsvRecords(filePath, (row) => {
+        if (skipped < off) {
+            skipped++;
+            return true;
+        }
+
         rows.push(row);
-        return rows.length < n;
+
+        if (rows.length >= lim) {
+            return false;
+        }
+
+        return true;
     });
+
     return rows;
 }
 
@@ -77,5 +105,6 @@ module.exports = {
     collectAllCsvRows,
     collectCsvRowsWhere,
     collectFirstNCsvRows,
+    collectCsvRowsSlice,
     streamCsvRecords,
 };

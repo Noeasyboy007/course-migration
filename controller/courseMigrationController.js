@@ -35,6 +35,7 @@ async function migrateCoursesToNewSystem(req, res) {
             courseId: req.body.courseId,
             courseIds,
             limit: req.body.limit,
+            offset: req.body.offset,
             dryRun: Boolean(req.body.dryRun),
         });
 
