@@ -33,6 +33,19 @@ async function migrateCourses(options = {}) {
     const config = getMigrationConfig();
 
     for (const course of selectedCourses) {
+        if (course.meta.isDeleted) {
+            results.push({
+                legacyCourseId: course.meta.legacyCourseId,
+                title: course.payload.title,
+                success: false,
+                skipped: true,
+                dryRun: Boolean(options.dryRun),
+                legacyStatus: course.meta.legacyStatus,
+                message: 'Course is deleted (legacy status D) and was not migrated.',
+            });
+            continue;
+        }
+
         if (options.dryRun) {
             results.push({
                 legacyCourseId: course.meta.legacyCourseId,
@@ -84,7 +97,8 @@ async function migrateCourses(options = {}) {
         batchOffset: resolveOffset(options.offset),
         batchLimit: options.limit != null && options.limit !== '' ? Number(options.limit) : null,
         successCount: results.filter((result) => result.success).length,
-        failureCount: results.filter((result) => !result.success).length,
+        skippedCount: results.filter((result) => result.skipped).length,
+        failureCount: results.filter((result) => !result.success && !result.skipped).length,
         results,
     };
 }
@@ -123,6 +137,8 @@ async function buildMigratedCourses(options = {}) {
         return {
             meta: {
                 legacyCourseId: courseRow.id,
+                legacyStatus: cleanText(courseRow.status).toUpperCase(),
+                isDeleted: isLegacyCourseDeleted(courseRow),
                 sourceCourseName: courseRow.course_name || '',
                 contentRowCount: contentData.rowCount,
                 bannerFound: Boolean(Object.keys(bannerRow).length),
@@ -131,6 +147,10 @@ async function buildMigratedCourses(options = {}) {
             payload,
         };
     });
+}
+
+function isLegacyCourseDeleted(courseRow) {
+    return String(courseRow?.status ?? '').trim().toUpperCase() === 'D';
 }
 
 function resolveMaxRows(limit) {
